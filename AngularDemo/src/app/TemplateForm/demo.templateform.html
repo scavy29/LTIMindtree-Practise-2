@@ -1,12 +1,12 @@
 <form #userData="ngForm" (ngSubmit)="submitData(userData)">  <!-- we are creating a templateReference of userData and assigning object of type ngForm-->
     <label>UserName</label>
     <br/>
-    <input type="text" name="fname" required ngModel/> <!--when we add ngModel the automations takes place of the assignment of key-value-->
+    <input type="text" name="fname" required ngModel /> <!--when we add ngModel the automations takes place of the assignment of key-value-->
     <br/><br/>
     <label>LastName</label>
     <br/>
-    <input type="text" name="lname" required ngModel/>
+    <input type="text" name="lname" required ngModel />
     <br/><br/>
     
-    <button class="btn btn-primary"  type="submit">Save</button>
+    <button class="btn btn-primary"  type="submit" class="btn btn-info">Save</button>
 </form>
