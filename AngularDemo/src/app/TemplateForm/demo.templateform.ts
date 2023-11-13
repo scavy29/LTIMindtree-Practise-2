@@ -1,9 +1,15 @@
 import { Component } from "@angular/core";
+import { NgForm } from "@angular/forms";
 
 @Component({
-    selector:'templateforms',
-    templateUrl:'./demo.templateforms.html'
+    selector : 'temp-form',
+    templateUrl : 'demo.templateform.html'
 })
-export class TemplateForm{
 
+export class TempForm{
+    submitData(form : NgForm) //
+    {
+        console.log(form.value);
+        console.log(form.valid);
+    }
 }

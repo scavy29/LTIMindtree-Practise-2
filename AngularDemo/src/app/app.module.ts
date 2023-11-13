@@ -3,13 +3,14 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TemplateForm } from './TemplateForm/demo.templateform';
+
 import { FormsModule } from '@angular/forms';
+import { TempForm } from './TemplateForm/demo.templateform';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TemplateForm
+    TempForm
   ],
   imports: [
     BrowserModule,
