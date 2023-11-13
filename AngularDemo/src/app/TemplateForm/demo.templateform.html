@@ -1,12 +1,17 @@
-<form #userData="ngForm" (ngSubmit)="submitData(userData)">  <!-- we are creating a templateReference of userData and assigning object of type ngForm-->
-    <label>UserName</label>
-    <br/>
-    <input type="text" name="fname" required ngModel /> <!--when we add ngModel the automations takes place of the assignment of key-value-->
-    <br/><br/>
-    <label>LastName</label>
-    <br/>
-    <input type="text" name="lname" required ngModel />
-    <br/><br/>
-    
-    <button class="btn btn-primary"  type="submit" class="btn btn-info">Save</button>
-</form>
+<div class="formt" style="width:300px;margin-left:500px;margin-right: 500px;margin-top: 100px;border: 1px dashed black;padding-left: 50px;">
+    <form #userData="ngForm" (ngSubmit)="submitData(userData)">  <!-- we are creating a templateReference of userData and assigning object of type ngForm-->
+        <label>UserName</label>
+        <br/>
+        <input type="text" #fnamelement="ngModel" name="fname" required ngModel /> <!--when we add ngModel the automations takes place of the assignment of key-value-->
+        <br/><br/>
+        <div *ngIf="fnamelement.isvalid || fnamelement.touched">
+            <p>Name is required</p>
+        </div>
+        <label>LastName</label>
+        <br/>
+        <input type="text" name="lname" required ngModel />
+        <br/><br/>
+        
+        <button [disabled]="userData.invalid" class="btn btn-primary"  type="submit" class="btn btn-info">Save</button>
+    </form>
+</div>
