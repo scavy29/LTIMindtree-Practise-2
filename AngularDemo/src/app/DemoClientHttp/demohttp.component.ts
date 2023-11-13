@@ -9,11 +9,8 @@ export class HttpDemo{
     _http:HttpClient=null;
     constructor(http:HttpClient){
         this._http=http;
-        this._http.get("http://www.google.com").subscribe((data)=>{
-            console.log(data);
-        },
-        (failure)=>{
-            console.log(failure);
-        })
+        this._http.get("https://8080-bdedfececadfabcaaaceeafebecebbffdafdefabcc.premiumproject.examly.io/WeatherForecast").subscribe(
+        (data)=>{ console.log(data); },
+        (failure)=>{ console.log(failure); })
     }
 }
