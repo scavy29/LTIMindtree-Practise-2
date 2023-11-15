@@ -1,4 +1,6 @@
 import { Component } from "@angular/core";
+import { Router } from "@angular/router";
+import { HelloWorldService } from "./ServiceUtilities/helloworl.service";
 
 @Component({
     selector : "demoRoute",
@@ -6,5 +8,13 @@ import { Component } from "@angular/core";
 })
 
 export class DemoRoute{
-           
+      constructor(private route:Router,private hello:HelloWorldService)
+      {
+
+      } 
+      
+      handleRoute(){
+        this.hello.sayHellowWorld();
+        this.route.navigate(["/form",23]);
+      }
 }

@@ -4,25 +4,28 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TempForm } from './TemplateForm/demo.templateform';
 import {HttpClientModule} from '@angular/common/http';
 import { HttpDemo } from './DemoClientHttp/demohttp.component';
+import { HelloWorldService } from './ServiceUtilities/helloworl.service';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
     AppComponent,
     TempForm,
-    HttpDemo
+    HttpDemo,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
-    
+    CommonModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
-  providers: [HttpClientModule],          //This is a Service
+  providers: [HttpClientModule,HelloWorldService],          //This is a Service
   bootstrap: [AppComponent]
 })
 export class AppModule { }
