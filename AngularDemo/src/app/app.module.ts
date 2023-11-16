@@ -10,12 +10,15 @@ import {HttpClientModule} from '@angular/common/http';
 import { HttpDemo } from './DemoClientHttp/demohttp.component';
 import { HelloWorldService } from './ServiceUtilities/helloworl.service';
 import { CommonModule } from '@angular/common';
+import { Token } from '@angular/compiler';
+import { TokenDemo } from './tokenizationcomponent';
 
 @NgModule({
   declarations: [
     AppComponent,
     TempForm,
     HttpDemo,
+    TokenDemo
   ],
   imports: [
     BrowserModule,
