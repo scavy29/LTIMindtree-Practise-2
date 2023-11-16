@@ -12,6 +12,7 @@ import { HelloWorldService } from './ServiceUtilities/helloworl.service';
 import { CommonModule } from '@angular/common';
 import { Token } from '@angular/compiler';
 import { TokenDemo } from './tokenizationcomponent';
+// import { DemoRoute } from './demoRoute.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { TokenDemo } from './tokenizationcomponent';
     FormsModule,
     CommonModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [HttpClientModule,HelloWorldService],          //This is a Service
   bootstrap: [AppComponent]
