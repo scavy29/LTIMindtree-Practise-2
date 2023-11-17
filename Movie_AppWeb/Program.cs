@@ -9,6 +9,15 @@ builder.Services.AddDbContext<MovieDbContext>(options=>{
     options.UseSqlServer(builder.Configuration.GetConnectionString("MyCon"));
 });
 
+builder.Services.AddCors(
+    options=>
+    {
+        options.AddDefaultPolicy(builder=>
+        {
+         builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
+    });
+});
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -27,6 +36,10 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseRouting(); //add
+
+app.UseCors();   // add
 
 app.UseAuthorization();
 

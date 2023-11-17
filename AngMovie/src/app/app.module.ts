@@ -7,21 +7,21 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddMoviesComponent } from './add-movies/add-movies.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { ReactformComponent } from './reactform/reactform.component';
+import { DeletemovieComponent } from './deletemovie/deletemovie.component';
 // import { ListmovieComponent } from './listmovie/listmovie.component';
 // import { FindmovieComponent } from './findmovie/findmovie.component';
 // import { EditmovieComponent } from './editmovie/editmovie.component';
-// import { DeletemovieComponent } from './deletemovie/deletemovie.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     AddMoviesComponent,
-    ReactformComponent
+    ReactformComponent,
+    DeletemovieComponent
     // ListmovieComponent,
     // FindmovieComponent,
     // EditmovieComponent,
-    // DeletemovieComponent,
   ],
   imports: [
     BrowserModule,
