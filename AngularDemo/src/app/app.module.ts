@@ -12,6 +12,9 @@ import { HelloWorldService } from './ServiceUtilities/helloworl.service';
 import { CommonModule } from '@angular/common';
 import { Token } from '@angular/compiler';
 import { TokenDemo } from './tokenizationcomponent';
+import { ApiConnect } from './BackEndConnect/backend.service';
+import { CRUD } from './BackEndConnect/backend.component';
+
 // import { DemoRoute } from './demoRoute.component';
 
 @NgModule({
@@ -19,7 +22,9 @@ import { TokenDemo } from './tokenizationcomponent';
     AppComponent,
     TempForm,
     HttpDemo,
-    TokenDemo
+    TokenDemo,
+    ApiConnect,
+    CRUD
   ],
   imports: [
     BrowserModule,
@@ -29,7 +34,7 @@ import { TokenDemo } from './tokenizationcomponent';
     HttpClientModule,
     ReactiveFormsModule,
   ],
-  providers: [HttpClientModule,HelloWorldService],          //This is a Service
+  providers: [HttpClientModule,HelloWorldService,ApiConnect],          //This is a Service
   bootstrap: [AppComponent]
 })
 export class AppModule { }
