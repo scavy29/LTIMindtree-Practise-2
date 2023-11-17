@@ -1,6 +1,6 @@
 {
-  "SerializedFilePath": "/home/coder/project/workspace/DemoSolutions.WebApi/obj/Debug/net6.0/project.razor.json",
-  "FilePath": "/home/coder/project/workspace/DemoSolutions.WebApi/DemoSolutions.WebApi.csproj",
+  "SerializedFilePath": "/home/coder/project/workspace/Movie_AppWeb/obj/Debug/net6.0/project.razor.json",
+  "FilePath": "/home/coder/project/workspace/Movie_AppWeb/Movie_AppWeb.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "6.0",
@@ -18371,7 +18371,7 @@
     ],
     "CSharpLanguageVersion": 1000
   },
-  "RootNamespace": "DemoSolutions.WebApi",
+  "RootNamespace": "Movie_AppWeb",
   "Documents": [],
   "SerializationFormat": "0.3"
 }
