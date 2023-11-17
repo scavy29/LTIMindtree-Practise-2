@@ -15,13 +15,13 @@ export class ApiConnect{
  
     }
  
-    SaveData(data:any)
+    SaveData(data:any) //to create row
     {
         let responseData:any = "";
         let httpheaders : HttpHeaders = new HttpHeaders({
             Accept : 'application/json'
         })
-        this.http.post("" , data , {headers:httpheaders})
+        this.http.post("https://8080-efecefcbfdfabcaaaceeafebeccaddbefddaf.premiumproject.examly.io/api/Department/Create" , data , {headers:httpheaders})
         .subscribe(res=> // this will check
             {
                 responseData=res;
@@ -33,7 +33,7 @@ export class ApiConnect{
             return responseData;
     }
  
-    UpdateData(id:number , )
+    UpdateData(id:number)
     {
  
     }

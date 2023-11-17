@@ -6,5 +6,12 @@ import { Component } from "@angular/core";
 })
 
 export class CRUD{
+    nme:string="";
+    location:string="";
+    age:number=0;
 
+    handleSave()
+    {
+        
+    }
 }
