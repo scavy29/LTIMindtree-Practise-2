@@ -9,6 +9,7 @@ import { Form } from '@angular/forms';
   templateUrl: './add-movies.component.html',
   styleUrls: ['./add-movies.component.css']
 })
+
 export class AddMoviesComponent implements OnInit {
 moviedata:Imovie = {id:0,name:'',yearrelease:0,rating:0}
   constructor(private ms:MovieserviceService,private route:Router) { }
