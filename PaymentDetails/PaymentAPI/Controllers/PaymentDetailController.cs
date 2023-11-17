@@ -44,7 +44,11 @@ namespace PaymentAPI.Controllers
                 return NotFound();
             }
             var gpd=db.PaymentDetails.Find(id);
-            if()   
+            if(gpd==null)
+            {
+                return NotFound();
+            }   
+            return Ok(gpd);
         }
 
         [HttpPost]
@@ -59,14 +63,26 @@ namespace PaymentAPI.Controllers
             return Ok();
         }
 
-        [HttpPost]
-        [Route("{id}")]
+        [HttpPut("{id}")]
         public IActionResult UpdatePaymentDetail(int id,PaymentDetail pd)
         {
-            var u=db.PaymentDetails.Find(id);
+            var u=db.PaymentDetails.FirstOrDefault(c=>c.PaymentDetailId==id);
             if(u!=null)
             {
                 db.PaymentDetails.Update(u);
+                db.SaveChanges();
+                return Ok();
+            }
+            return NotFound();
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeletePaymentDetail(int id)
+        {
+            var pd=db.PaymentDetails.Find(id);
+            if(pd!=null)
+            {
+                db.Remove(pd);
                 db.SaveChanges();
                 return Ok();
             }
