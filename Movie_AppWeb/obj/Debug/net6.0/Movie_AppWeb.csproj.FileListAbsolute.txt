@@ -1,0 +1,7 @@
+/home/coder/project/workspace/Movie_AppWeb/obj/Debug/net6.0/Movie_AppWeb.csproj.AssemblyReference.cache
+/home/coder/project/workspace/Movie_AppWeb/obj/Debug/net6.0/Movie_AppWeb.GeneratedMSBuildEditorConfig.editorconfig
+/home/coder/project/workspace/Movie_AppWeb/obj/Debug/net6.0/Movie_AppWeb.AssemblyInfoInputs.cache
+/home/coder/project/workspace/Movie_AppWeb/obj/Debug/net6.0/Movie_AppWeb.AssemblyInfo.cs
+/home/coder/project/workspace/Movie_AppWeb/obj/Debug/net6.0/Movie_AppWeb.csproj.CoreCompileInputs.cache
+/home/coder/project/workspace/Movie_AppWeb/obj/Debug/net6.0/Movie_AppWeb.MvcApplicationPartsAssemblyInfo.cs
+/home/coder/project/workspace/Movie_AppWeb/obj/Debug/net6.0/Movie_AppWeb.MvcApplicationPartsAssemblyInfo.cache
