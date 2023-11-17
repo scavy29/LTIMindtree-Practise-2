@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    margin: 40px;
+    background-color: cyan;
+    height: 500px;
+}
+table
+{
+    width: 100%;
+    align-items: center;
+}
+tr:nth-child(even)
+{
+    background-color: lightgreen;
+}
+tr:nth-child(odd)
+{
+    background-color: lightgoldenrodyellow;
+}
+tr:hover{
+    background-color: yellow;
+    color:blueviolet
+}
+h1{
+    text-align: center;
+    background-color: deeppink;
+    color:silver;
+    font-family:cursive;
+}
