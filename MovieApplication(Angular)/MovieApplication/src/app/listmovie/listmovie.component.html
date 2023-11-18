@@ -15,13 +15,14 @@
                     <td>{{m.name}}</td>
                     <td>{{m.rating}}</td>
                     <td>{{m.yearRelease}}</td>
-               </tr>     
+               <!-- </tr>      -->
                     <td>
                         <a [routerLink]="['/findmovie/',m.id]">Details</a>&nbsp;&nbsp;&nbsp;&nbsp;
                         <a [routerLink]="['/edit/',m.id]">Edit </a>&nbsp;&nbsp;&nbsp;&nbsp;
                         <a [routerLink]="['/delete/',m.id]">Delete </a>&nbsp;&nbsp;&nbsp;&nbsp;
                     </td>
                 </tr>
+                
             </tbody>
         </table>
     </div>
