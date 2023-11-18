@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/coder/project/workspace/Movie_AppWeb/Movie_AppWeb.csproj": {}
+    "/home/coder/project/workspace/MovieApplication(Angular)/Movie_AppWeb/Movie_AppWeb.csproj": {}
   },
   "projects": {
-    "/home/coder/project/workspace/Movie_AppWeb/Movie_AppWeb.csproj": {
+    "/home/coder/project/workspace/MovieApplication(Angular)/Movie_AppWeb/Movie_AppWeb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/coder/project/workspace/Movie_AppWeb/Movie_AppWeb.csproj",
+        "projectUniqueName": "/home/coder/project/workspace/MovieApplication(Angular)/Movie_AppWeb/Movie_AppWeb.csproj",
         "projectName": "Movie_AppWeb",
-        "projectPath": "/home/coder/project/workspace/Movie_AppWeb/Movie_AppWeb.csproj",
+        "projectPath": "/home/coder/project/workspace/MovieApplication(Angular)/Movie_AppWeb/Movie_AppWeb.csproj",
         "packagesPath": "/home/coder/.nuget/packages/",
-        "outputPath": "/home/coder/project/workspace/Movie_AppWeb/obj/",
+        "outputPath": "/home/coder/project/workspace/MovieApplication(Angular)/Movie_AppWeb/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/coder/.nuget/NuGet/NuGet.Config"

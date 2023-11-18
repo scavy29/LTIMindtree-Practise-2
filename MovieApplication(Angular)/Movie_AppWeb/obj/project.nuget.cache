@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6ozfE4vQX8N42/4z7IMe8oI83OGS8vOzlO6bAoueXqxEpG1vChtrPrdKVygLIUHeBSXo46AL4cSflJ9YELlrdg==",
+  "dgSpecHash": "o8D3lebMTBaUPWfRiOd/D9131dHDkVxzl3XZKKdi7R8x6pkCJO0mG8cx0eN2yk2MKAMFp0B/P74vPx6d6nCZ0g==",
   "success": true,
-  "projectFilePath": "/home/coder/project/workspace/Movie_AppWeb/Movie_AppWeb.csproj",
+  "projectFilePath": "/home/coder/project/workspace/MovieApplication(Angular)/Movie_AppWeb/Movie_AppWeb.csproj",
   "expectedPackageFiles": [
     "/home/coder/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/home/coder/.nuget/packages/microsoft.csharp/4.5.0/microsoft.csharp.4.5.0.nupkg.sha512",
