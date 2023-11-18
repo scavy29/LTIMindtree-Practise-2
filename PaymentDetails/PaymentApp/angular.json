@@ -33,7 +33,7 @@
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "with": "src/environments/environment.development.ts"
                 }
               ],
               "optimization": true,
@@ -68,8 +68,12 @@
           "configurations": {
             "production": {
               "browserTarget": "PaymentApp:build:production"
+            },
+            "development":{
+              "browserTarget": "PaymentApp:build:production"
             }
-          }
+          },
+          "defaultConfiguration":"development"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
