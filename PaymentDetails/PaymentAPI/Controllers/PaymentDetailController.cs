@@ -63,18 +63,18 @@ namespace PaymentAPI.Controllers
             return Ok();
         }
 
-        [HttpPut("{id}")]
-        public IActionResult UpdatePaymentDetail(int id,PaymentDetail pd)
-        {
-            var u=db.PaymentDetails.FirstOrDefault(c=>c.PaymentDetailId==id);
-            if(u!=null)
-            {
-                db.PaymentDetails.Update(u);
-                db.SaveChanges();
-                return Ok();
-            }
-            return NotFound();
-        }
+        // [HttpPut("{id}")]
+        // public IActionResult UpdatePaymentDetail(int id,PaymentDetail pd)
+        // {
+        //     var u=db.PaymentDetails.FirstOrDefault(c=>c.PaymentDetailId==id);
+        //     if(u!=null)
+        //     {
+        //         db.PaymentDetails.Update(u);
+        //         db.SaveChanges();
+        //         return Ok();
+        //     }
+        //     return NotFound();
+        // }
 
         [HttpDelete("{id}")]
         public IActionResult DeletePaymentDetail(int id)

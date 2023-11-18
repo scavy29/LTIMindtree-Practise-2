@@ -30,17 +30,17 @@ if (app.Environment.IsDevelopment())
 // .AllowAnyMethod()
 // .AllowAnyHeader());
 
-builder.Services.AddCors(
-    options =>
-    {
-        options.AddDefaultPolicy(builder =>
-        {
-            builder
-            .AllowAnyHeader()
-            .AllowAnyMethod()
-            .AllowAnyOrigin();
-        });
-    });
+// builder.Services.AddCors(
+//     options =>
+//     {
+//         options.AddDefaultPolicy(builder =>
+//         {
+//             builder
+//             .AllowAnyHeader()
+//             .AllowAnyMethod()
+//             .AllowAnyOrigin();
+//         });
+//     });
 
 app.UseCors();
 
