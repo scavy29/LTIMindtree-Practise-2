@@ -6,7 +6,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class PaymentDetailService {
-  url:string = environment.apiBaseUrl+'/PaymentDetail/6'
+  private url = "https://8080-bdedfececadfabcaaaceeafebecebbffdafdefabcc.premiumproject.examly.io/api/PaymentDetail";
   constructor(private http: HttpClient) { }
 
   refreshList()

@@ -24,10 +24,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseCors(options=>
+builder.Services.AddCors(options=>
 options.WithOrigins("https://8081-bdedfececadfabcaaaceeafebecebbffdafdefabcc.premiumproject.examly.io/")
 .AllowAnyMethod()
 .AllowAnyHeader());
+
+app.UseCors();
 
 app.UseHttpsRedirection();
 
