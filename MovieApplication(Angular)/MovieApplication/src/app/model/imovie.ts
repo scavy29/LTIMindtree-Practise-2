@@ -5,4 +5,4 @@ export interface Imovie {
     yearrelease:number
     rating:number
     
-    }
+}
