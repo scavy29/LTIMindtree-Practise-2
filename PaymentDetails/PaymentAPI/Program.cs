@@ -42,7 +42,7 @@ builder.Services.AddCors(
         });
     });
 
-// app.UseCors();
+app.UseCors();
 
 app.UseHttpsRedirection();
 

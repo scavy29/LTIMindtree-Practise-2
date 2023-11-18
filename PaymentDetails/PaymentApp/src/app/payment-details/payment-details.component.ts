@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PaymentDetailService } from '../shared/payment-detail.service';
 
+// npx -p @angular/cli@8 ng new
+
 @Component({
   selector: 'app-payment-details',
   templateUrl: './payment-details.component.html',
@@ -8,10 +10,11 @@ import { PaymentDetailService } from '../shared/payment-detail.service';
 })
 export class PaymentDetailsComponent implements OnInit {
 
-  constructor(public service:PaymentDetailService) { }
+  constructor(public service:PaymentDetailService) {   
+  }
 
   ngOnInit():void{
-    this.service.refreshList();
+    console.log(this.service.getallpays());
   }
 
 }
