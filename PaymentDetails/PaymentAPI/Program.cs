@@ -11,7 +11,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<PaymentDetailContext>(options=>{
+builder.Services.AddDbContext<PaymentDetailContext>(options =>
+{
     options.UseSqlServer(builder.Configuration.GetConnectionString("DevConnection"));
 });
 
@@ -24,12 +25,24 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-builder.Services.AddCors(options=>
-options.WithOrigins("https://8081-bdedfececadfabcaaaceeafebecebbffdafdefabcc.premiumproject.examly.io/")
-.AllowAnyMethod()
-.AllowAnyHeader());
+// builder.Services.AddCors(options=>
+// options.WithOrigins("https://8081-bdedfececadfabcaaaceeafebecebbffdafdefabcc.premiumproject.examly.io/")
+// .AllowAnyMethod()
+// .AllowAnyHeader());
 
-app.UseCors();
+builder.Services.AddCors(
+    options =>
+    {
+        options.AddDefaultPolicy(builder =>
+        {
+            builder
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowAnyOrigin();
+        });
+    });
+
+// app.UseCors();
 
 app.UseHttpsRedirection();
 
