@@ -9,7 +9,9 @@ import { Employee } from './employee';
 })
 export class EmployeeService {
   url = 'https://8080-bdedfececadfabcaaaceeafebecebbffdafdefabcc.premiumproject.examly.io/Api/Employee'
+  
   constructor(private http:HttpClient) { }
+  
   getAllEmployee(): Observable<Employee[]>{
     return this.http.get<Employee[]>(this.url+'/GetEmployee');
   }
@@ -32,6 +34,6 @@ export class EmployeeService {
     const httpOptions = { headers: new HttpHeaders({ 'Content-Type':'application/json'})};
     return this.http.put<number>(this.url + '/DeleteEmployee?id' + employeeid, httpOptions);
   }
-  
+
 }
 

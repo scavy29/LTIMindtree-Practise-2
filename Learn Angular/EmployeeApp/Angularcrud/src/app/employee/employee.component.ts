@@ -10,6 +10,7 @@ import { Employee } from '../employee';
   templateUrl: './employee.component.html',
   styleUrls: ['./employee.component.css']
 })
+
 export class EmployeeComponent implements OnInit {
   dataSaved=false;
   employeeForm:any;
@@ -25,7 +26,7 @@ export class EmployeeComponent implements OnInit {
       DateOfBirth:['',[Validators.required]],
       EmailId:['',[Validators.required]],
       Gender:['',[Validators.required]],
-      ADdress:['',[Validators.required]],
+      Address:['',[Validators.required]],
       PinCode:['',[Validators.required]],
     });
     this.loadAllEmployees();
@@ -91,6 +92,7 @@ export class EmployeeComponent implements OnInit {
       });
     }
   }
+  
   resetForm(){
     this.employeeForm.reset();
     this.massage=null;
