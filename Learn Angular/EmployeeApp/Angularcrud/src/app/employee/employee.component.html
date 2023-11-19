@@ -54,11 +54,48 @@
                         </td>
                         <td class="tbl1">
                             <mat-form-field class="demo-full-width">
-                                <input formControlName="Address" matTooltip="Enter Address" matInput placeholder="Mumbai, Maharashtra">
+                                <input formControlName="PinCode" matTooltip="Enter PinCode" matInput placeholder="444002">
                             </mat-form-field>
                             <mat-error>
-                                <span *ngIf="!employeeForm.get('Address').value && employeeForm.get('Address').touched"></span>
+                                <span *ngIf="!employeeForm.get('PinCode').value && employeeForm.get('PinCode').touched"></span>
                             </mat-error>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="content-center">
+                            <button type="submit" mat-raised-button color="accent" matTooltip="Click Submit Button" [disabled]="!employeeForm.valid">Submit</button>
+                            <button type="reset" mat-raised-button color="accent" matTooltip="Click Reset Button" (click)="resetForm()">Reset</button>
+                        </td>
+                        <td>
+                            <p *ngIf="dataSaved" style="color:rgb(0,128,0);font-size: 20px;font-weight: bold" class="success" align="left">
+                                {{massage}}
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+                <br><br>
+                <table class="table">
+                    <tr ngclass="btn-primary">
+                        <th class="tbl2">Employee Name</th>
+                        <th class="tbl2">Date of birth</th>
+                        <th class="tbl2">Email Id</th>
+                        <th class="tbl2">Gender</th>
+                        <th class="tbl2">Address</th>
+                        <th class="tbl2">Pin Code</th>
+                        <th class="tbl2">Edit</th>
+                        <th class="tbl2">Delete</th>
+                    </tr>
+                    <tr *ngFor="let employee of allEmployees | async">
+                        <td class="tbl2">{{employee.EmpName}}</td>
+                        <td class="tbl2">{{employee.DateOfBirth | date }}</td>
+                        <td class="tbl2">{{employee.EmailId}}</td>
+                        <td class="tbl2">{{employee.Gender }}</td>
+                        <td class="tbl2">{{employee.Address }}</td>
+                        <td class="tbl2">{{employee.PinCode }}</td>
+                        <td class="tbl2">
+                            <button type="button" class="btn btn-info" matTooltip="Click Edit Button" (click)="loadEmployeeToEdit(employee.EmpId)">Edit</button>
+                            <button type="button" class="btn btn-info" matTooltip="Click Delete Button" (click)="deleteEmployeeToEdit(employee.EmpId)">Delete</button>
                         </td>
                     </tr>
                 </table>

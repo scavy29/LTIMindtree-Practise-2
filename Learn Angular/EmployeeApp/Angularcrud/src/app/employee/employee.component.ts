@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder,Validators } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { EmployeeService } from '../employee.service';
+import { Employee } from '../employee';
+
 
 @Component({
   selector: 'app-employee',
@@ -6,7 +11,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./employee.component.css']
 })
 export class EmployeeComponent implements OnInit {
-
+  dataSaved=false;
+  employeeForm:any;
+  
   constructor() { }
 
   ngOnInit() {
