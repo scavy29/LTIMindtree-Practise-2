@@ -1,12 +1,35 @@
 <!-- <p>pay works!</p> -->
 <!-- Display Data -->
+<!--
 <ul>
-    <li *ngFor="let item of items">{{ item.name }}</li>
+    <li *ngFor="let item of items">{{ item.cardOwnerName }}</li>
   </ul>
-  
+  -->
+
   <!-- Create Form -->
   <!-- <form (submit)="createItem()">
     <input type="text" [(ngModel)]="newItemName" name="newItemName" required>
     <button type="submit">Create</button>
   </form> -->
   
+  <table class="table table-stripped">
+    <tr>
+      <th>Payment ID</th>
+      <th>Owner Name</th>
+      <th>Card Number</th>
+      <th>Expiry Date</th>
+      <th>Security Code</th>
+    </tr>
+    <!-- "paymentDetailId": 6,
+    "cardOwnerName": "Virat",
+    "cardNumber": "1234567891023456",
+    "expirationDate": "02/24",
+    "securityCode": "23" -->
+    <tr *ngFor="let item of items">
+      <td>{{item.paymentDetailId}}</td>
+      <td>{{item.cardOwnerName}}</td>
+      <td>{{item.cardNumber}}</td>
+      <td>{{item.expirationDate}}</td>
+      <td>{{item.securityCode}}</td>
+    </tr>
+  </table>

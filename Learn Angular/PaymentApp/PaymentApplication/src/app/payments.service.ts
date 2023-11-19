@@ -11,7 +11,7 @@ export class PaymentsService {
   constructor(private http:HttpClient) { }
 
   getAll(): Observable<any[]> {
-    return this.http.get<any[]>(this.url);
+    return this.http.get<any[]>(this.url+'/GetPaymentDetail');
   }
 
   get(id: number): Observable<any> {

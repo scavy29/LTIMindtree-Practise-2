@@ -5,10 +5,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using PaymentAPI.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.Extensions.Logging;
 
 namespace PaymentAPI.Controllers
 {
+    [EnableCors("AllowAllOrigins")]
     [Route("api/[controller]")]
     // [Route("api/Payment")]
     [ApiController]
