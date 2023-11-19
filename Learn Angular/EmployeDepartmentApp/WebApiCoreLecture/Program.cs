@@ -11,8 +11,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
-builder.Services.AddDbContext<EmployeeContext>(options => {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("ConEmp"));
+builder.Services.AddDbContext<EmployeeContext>(options=>{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("EmpCon"));
 });
 
 var app = builder.Build();
@@ -24,15 +24,18 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-builder.Services.AddCors(cors => cors.AddPolicy("MyPolicy", builder => {
-        builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
-      }));
+// builder.Services.AddCors(cors => cors.AddPolicy("MyPolicy", builder => {
+//         builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+// }));
 
 
 
 app.UseHttpsRedirection();
+
 app.UseRouting();
+
 app.UseCors("MyPolicy");
+
 app.UseAuthorization();
 
 app.UseEndpoints(endpoints =>
