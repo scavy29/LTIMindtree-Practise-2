@@ -19,6 +19,7 @@ namespace CrudAngular.Controllers
         
         //GetAllEmployees
         [HttpGet]
+        [Route("GetEmployee")]
         public IActionResult GetEmployee()
         {
             return Ok(db.Employees);
@@ -38,7 +39,7 @@ namespace CrudAngular.Controllers
         }
 
         //Add an Employee
-        [HttpPost]
+        [HttpPost("AddEmployee")]
         public IActionResult AddEmployee(Employee e)
         {
             if(!ModelState.IsValid)
@@ -51,7 +52,7 @@ namespace CrudAngular.Controllers
         }
 
         //Update an Employee
-        [HttpPut]
+        [HttpPut("UpdateEmployee/{id}")]
         public IActionResult UpdateEmployee(int id,Employee emp)
         {
             var e=db.Employees.Find(id);
@@ -69,7 +70,8 @@ namespace CrudAngular.Controllers
             return NotFound();
         }
 
-        [HttpDelete]
+        //Delete an Employee
+        [HttpDelete("DeleteEmployee/{id}")]
         public IActionResult DeleteEmployee(int id)
         {
             var e=db.Employees.Find(id);
