@@ -1,7 +1,68 @@
 <div class="container">
     <mat-card>
         <mat-toolbar color="accent">
-            <div align="center" style="color:white;text-align: ;"
+            <div align="center" style="color:white;text-align: right;">
+                CRUD operation in Angular 8 using Web API & SQL DB
+            </div>
         </mat-toolbar>
+        <br><br>
+        <mat-card-content>
+            <form [formGroup]="employeeForm" (ngSubmit)="onFormSubmit(employeeForm.Value)">
+                <table>
+                    <tr>
+                        <td class="tbl1">
+                            <mat-form-field class="demo-full-width">
+                                <input formControlName="EmpName" matTooltip="Enter Employee Name" matInput placeholder="Employee Name">
+                            </mat-form-field>
+                            <mat-error>
+                                <span *ngIf="!employeeForm.get('EmpName').value && employeeForm.get('EmpName').touched"></span>
+                            </mat-error>
+                        </td>
+                        <td class="tbl1">
+                            <mat-form-field class="demo-full-width">
+                                <input matInput [matDatepicker]="picker" matTooltip="Enter Date of Birth" formControlName="DateOfBirth" placeholder="12-Dec-2999">
+                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker>
+                            </mat-form-field>
+                            <mat-error>
+                                <span &ngIf="!employeeForm.get('DateOfBirth').value && employeeForm.get('DateOfBirth).touched"></span>
+                            </mat-error>
+                        </td>
+                        <td class="tbl1">
+                            <mat-form-field class="demo-full-width">
+                                <input formControlName="EmailId" matTooltip="Enter EmailId" matInput placeholder="dv@gmail.com">
+                            </mat-form-field>
+                            <mat-error>
+                                <span *ngIf="!employeeForm.get('EmailId').value && employeeForm.get('EmailId').touched"></span>
+                            </mat-error>
+                        </td>
+                        <td class="tbl1">
+                            <mat-form-field class="demo-full-width">
+                                <input formControlName="Gender" matTooltip="Enter Gender" matInput placeholder="Male,Female">
+                            </mat-form-field>
+                            <mat-error>
+                                <span *ngIf="!employeeForm.get('Gender').value && employeeForm.get('Gender').touched"></span>
+                            </mat-error>
+                        </td>
+                        <td class="tbl1">
+                            <mat-form-field class="demo-full-width">
+                                <input formControlName="Address" matTooltip="Enter Address" matInput placeholder="Mumbai, Maharashtra">
+                            </mat-form-field>
+                            <mat-error>
+                                <span *ngIf="!employeeForm.get('Address').value && employeeForm.get('Address').touched"></span>
+                            </mat-error>
+                        </td>
+                        <td class="tbl1">
+                            <mat-form-field class="demo-full-width">
+                                <input formControlName="Address" matTooltip="Enter Address" matInput placeholder="Mumbai, Maharashtra">
+                            </mat-form-field>
+                            <mat-error>
+                                <span *ngIf="!employeeForm.get('Address').value && employeeForm.get('Address').touched"></span>
+                            </mat-error>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </mat-card-content>
     </mat-card>
 </div>
