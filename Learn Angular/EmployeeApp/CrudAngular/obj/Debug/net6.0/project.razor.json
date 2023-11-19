@@ -1,6 +1,6 @@
 {
-  "SerializedFilePath": "/home/coder/project/workspace/PaymentDetails/PaymentAPI/obj/Debug/net6.0/project.razor.json",
-  "FilePath": "/home/coder/project/workspace/PaymentDetails/PaymentAPI/PaymentAPI.csproj",
+  "SerializedFilePath": "/home/coder/project/workspace/Learn Angular/EmployeeApp/CrudAngular/obj/Debug/net6.0/project.razor.json",
+  "FilePath": "/home/coder/project/workspace/Learn Angular/EmployeeApp/CrudAngular/CrudAngular.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "6.0",
@@ -18371,7 +18371,7 @@
     ],
     "CSharpLanguageVersion": 1000
   },
-  "RootNamespace": "PaymentAPI",
+  "RootNamespace": "CrudAngular",
   "Documents": [],
   "SerializationFormat": "0.3"
 }
