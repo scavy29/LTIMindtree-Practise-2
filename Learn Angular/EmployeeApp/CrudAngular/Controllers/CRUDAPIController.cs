@@ -8,7 +8,8 @@ using CrudAngular.Models;
 namespace CrudAngular.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    // [Route("api/[controller]")]
+    [Route("Api/Employee")]
     public class CRUDAPIController : ControllerBase
     {
         private AppDbContext db;
@@ -28,9 +29,9 @@ namespace CrudAngular.Controllers
         //GetEmployeeWithID
         [HttpGet]
         [Route("GetEmployeeById/{id}")]
-        public IActionResult GetEmployeeById(int empid)
+        public IActionResult GetEmployeeById(int id)
         {
-            var e=db.Employees.Find(empid);
+            var e=db.Employees.Find(id);
             if(e!=null)
             {
                 return Ok(e);
