@@ -20,7 +20,17 @@ export class EmployeeComponent implements OnInit {
   constructor(private formbuilder: FormBuilder, private employeeService:EmployeeService) { }
 
   ngOnInit() {
+    this.employeeForm=this.formbuilder.group({
+      EmpName:['',[Validators.required]],
+      DateOfBirth:['',[Validators.required]],
+      EmailId:['',[Validators.required]],
+      Gender:['',[Validators.required]],
+      ADdress:['',[Validators.required]],
+      PinCode:['',[Validators.required]],
+    });
+    this.loadAllEmployees();
   }
+
   loadAllEmployees(){
     this.allEmployees = this.employeeService.getAllEmployee();
   }
