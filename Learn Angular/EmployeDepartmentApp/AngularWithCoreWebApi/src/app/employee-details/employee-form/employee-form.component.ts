@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./employee-form.component.css']
 })
 export class EmployeeFormComponent implements OnInit {
+  isSlide: string;
+  hideShowSlide() {
+    throw new Error('Method not implemented.');
+  }
 
   constructor() { }
 
