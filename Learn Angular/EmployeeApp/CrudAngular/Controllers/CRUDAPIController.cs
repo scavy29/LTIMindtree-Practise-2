@@ -16,7 +16,28 @@ namespace CrudAngular.Controllers
         {
             this.db=_context;
         }
-
         
+        [HttpGet]
+        public IActionResult GetEmployee()
+        {
+            return Ok(db.Employees);
+        }
+
+        [HttpGet]
+        [Route("GetEmployeeById/{id}")]
+        public IActionResult GetEmployeeById(int empid)
+        {
+            var e=db.Employees.Find(empid);
+            if(e!=null)
+            {
+                return Ok(e);
+            }
+            return NotFound();
+        }
+
+        public IActionResult PostEmployee(Employee e)
+        {
+            
+        }
     }
 }
