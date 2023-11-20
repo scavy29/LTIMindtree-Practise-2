@@ -56,29 +56,29 @@ namespace PaymentAPI.Controllers
         }
 
         [HttpPost]
+        [Route("PostPaymentDetail")]
         public IActionResult PostPaymentDetail(PaymentDetail pd)
         {
-            if(db.PaymentDetails==null)
-            {
-                return NotFound();
-            }
             db.PaymentDetails.Add(pd);
             db.SaveChanges();
             return Ok();
         }
 
-        // [HttpPut("{id}")]
-        // public IActionResult UpdatePaymentDetail(int id,PaymentDetail pd)
-        // {
-        //     var u=db.PaymentDetails.FirstOrDefault(c=>c.PaymentDetailId==id);
-        //     if(u!=null)
-        //     {
-        //         db.PaymentDetails.Update(u);
-        //         db.SaveChanges();
-        //         return Ok();
-        //     }
-        //     return NotFound();
-        // }
+        [HttpPut("UpdatePaymentDetail/{id}")]
+        public IActionResult UpdatePaymentDetail(int id,PaymentDetail pd)
+        {
+            var u=db.PaymentDetails.FirstOrDefault(c=>c.PaymentDetailId==id);
+            if(u!=null)
+            {
+                u.CardOwnerName=pd.CardOwnerName;
+                u.CardNumber=pd.CardNumber;
+                u.ExpirationDate=pd.ExpirationDate;
+                u.SecurityCode=pd.SecurityCode;
+                db.SaveChanges();
+                return Ok(pd);
+            }
+            return NotFound();
+        }
 
         [HttpDelete("{id}")]
         public IActionResult DeletePaymentDetail(int id)
