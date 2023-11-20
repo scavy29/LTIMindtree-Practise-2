@@ -16,7 +16,7 @@ export class PaymentsService {
     return this.http.get<any[]>(this.url+'/GetPaymentDetail');
   }
 
-  //Create Service
+  //Create Payment
   Create(data:any){
     let resData:any="";
     let httpHeader:HttpHeaders=new HttpHeaders({
