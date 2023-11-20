@@ -80,7 +80,7 @@ namespace PaymentAPI.Controllers
             return NotFound();
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("DeletePaymentDetail/{id}")]
         public IActionResult DeletePaymentDetail(int id)
         {
             var pd=db.PaymentDetails.Find(id);

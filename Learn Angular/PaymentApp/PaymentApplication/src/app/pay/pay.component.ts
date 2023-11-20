@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { PaymentsService } from '../payments.service';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-// import { error } from 'console';
 
 @Component({
   selector: 'app-pay',
@@ -15,6 +14,7 @@ export class PayComponent implements OnInit {
   selectedItemDetails:any;
   inputItemId:number;
   idNotFound:boolean=false;
+  deleteItemId:number;
 
   constructor(private pay:PaymentsService,private r:Router) { }
 
@@ -59,19 +59,19 @@ export class PayComponent implements OnInit {
   }
 
   //Delete Using ID
-  deleteItem():void{
-    if(this.selectedItemId)
-    {
-      this.pay.delete(this.selectedItemId).subscribe(
-        ()=>{
-          this.loadItems();
-          this.selectedItemId=null;
-          this.selectedItemDetails=null;
-        },
-        (error)=>{
-          console.error('Error Deleting item',error);
-        }
-      );
-    }
-  }
+  // deleteItem():void{
+  //   if(this.deleteItemId)
+  //   {
+  //     this.pay.delete(this.deleteItemId).subscribe(
+  //       ()=>{
+  //         this.loadItems();
+  //         this.selectedItemId=null;
+  //         this.selectedItemDetails=null;
+  //       },
+  //       (error)=>{
+  //         console.error('Error Deleting',error);
+  //       }
+  //     )
+  //   }
+  // }
 }

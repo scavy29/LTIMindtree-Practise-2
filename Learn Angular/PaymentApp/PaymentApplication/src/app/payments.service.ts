@@ -40,7 +40,7 @@ export class PaymentsService {
 
   //Delete using ID
   delete(id: number): Observable<any> {
-    return this.http.delete<any>(`${this.url}/${id}`);
+    return this.http.delete<any>(`${this.url}/DeletePaymentDetail/${id}`);
   }
   // update(id: number, data: any): Observable<any> {
   //   return this.http.put<any>(`${this.url}/${id}`, data);
