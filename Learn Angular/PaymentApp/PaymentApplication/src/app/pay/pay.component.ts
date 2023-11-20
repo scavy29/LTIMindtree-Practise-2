@@ -78,18 +78,16 @@ export class PayComponent implements OnInit {
   }
 
   //Update Details using Id
-  // updateDetails():void{
-  //   if(this.updateItemId && Object.keys(this.updatedData).length>0){
-  //     this.pay.UpdateById(this.updateItemId,this.updatedData).subscribe(
-  //       ()=>{
-  //         console.log('Details Updated');
-  //       },
-  //       (error)=>{
-  //         console.error('Error Update');
-  //       }
-  //     );
-  //   }
-  // }
+  updateDetails():void{
+    if(this.updateItemId && Object.keys(this.updatedData).length>0){
+      this.pay.UpdateById(this.updateItemId,this.updatedData).subscribe(
+        ()=>{
+          console.log('Details Updated');
+        },
+        (error)=>{
+          console.error('Error Update');
+        }
+      );
     }
   }
 }
