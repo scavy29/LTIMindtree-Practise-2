@@ -8,8 +8,7 @@ import { PaymentsService } from '../payments.service';
 })
 export class PayComponent implements OnInit {
   items: any[];
-  // newItemNames:string[]=[];
-  newItemNames:any[];
+  newItemNames:string[]=[];
   selectedItemId:number;
 
   constructor(private pay:PaymentsService) { }
@@ -28,6 +27,7 @@ export class PayComponent implements OnInit {
   }
 
   createItems():void{
+    console.log("Called CreateItems");
     if(this.newItemNames && this.newItemNames.length>0)
     {
       const newItems=this.newItemNames.map(name=>({name}));

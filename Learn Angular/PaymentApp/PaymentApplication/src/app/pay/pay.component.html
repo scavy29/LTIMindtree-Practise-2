@@ -28,16 +28,16 @@
   <button type="submit">Create</button>
 </form> -->
 
-<form (submit)="createItems()">
-  <div *ngFor="let itemName of newItemNames;let i=index">
-    <input type="text" [(ngModel)]="newItemNames[i]" name="newItemNames_{{i}}" required>
-  </div>
-  <button type="submit" class="btn btn-info">Create</button>
+<form (ngsubmit)="createItems()">
+  <!-- <label></label>
+    <input type="text" [(ngModel)]="newItemNames[0]" name="newItemNames_{{0}}" required> -->
+  <!-- </div> -->
+  <button type="submit">Create</button>
 </form>
 
 <br>
   <br>
-  <!-- <input type="text" style="width: 600px;margin-right: 100px;margin-left: 400px;"><button (click)="Search()" class="btn btn-info">Search</button>  -->
+  <input type="text" style="width: 600px;margin-right: 100px;margin-left: 400px;"><button (click)="Search()" class="btn btn-info">Search</button> 
   <br><br>
   <table class="table table-stripped">
     <tr>
