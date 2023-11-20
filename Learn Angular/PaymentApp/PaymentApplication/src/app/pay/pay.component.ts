@@ -8,7 +8,8 @@ import { PaymentsService } from '../payments.service';
 })
 export class PayComponent implements OnInit {
   items: any[];
-  newItemNames:string='';
+  // newItemNames:string[]=[];
+  newItemNames:any[];
   selectedItemId:number;
 
   constructor(private pay:PaymentsService) { }
@@ -29,9 +30,12 @@ export class PayComponent implements OnInit {
   createItems():void{
     if(this.newItemNames && this.newItemNames.length>0)
     {
-      const newItems:this.newItemNames.map(name=>({name}));
+      const newItems=this.newItemNames.map(name=>({name}));
 
-      this.pay.create(It)
+      this.pay.create(newItems).subscribe(()=>{
+        this.loadItems();
+        this.newItemNames=Array(this.newItemNames.length).fill('');
+      });
     }
   }
 
