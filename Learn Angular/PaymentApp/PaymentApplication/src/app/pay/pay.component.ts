@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class PayComponent implements OnInit {
   items: any[];
   selectedItemId:number;
+  selectedItemDetails:any;
 
   constructor(private pay:PaymentsService,private r:Router) { }
 
@@ -34,8 +35,11 @@ export class PayComponent implements OnInit {
     console.log("Added Successfully!!!");
   }
 
-  //Fetch Particular ID Details
+  //Details using ID
   selectItem(id:number):void{
-    this.selectedItemId=id;
+    // this.selectedItemId=id;
+    this.pay.getDetailsById(id).subscribe((details)=>{
+      this.selectedItemDetails=details;
+    });
   }
 }

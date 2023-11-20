@@ -1,3 +1,4 @@
+<h1>Create</h1>
 <form #postForm="ngForm" (ngSubmit)="onSubmitPost(postForm)">
   <div class="form-group">
       <label for="cardNumber">Card Number</label> <br>
@@ -27,16 +28,14 @@
 <br>
 <br>
 
-<!-- <div class="container">
-  <ul>
-    <li *ngFor="let item of items" (click)="selectItem(item.id)">
-      {{item.cardOwnerName}}
-    </li>
-  </ul>
-</div> -->
+<h1>Details</h1>
+<div *ngIf="items">
+  <p>{{items.cardOwnerName}}</p>
+</div>
 
 
-  <input type="text" style="width: 600px;margin-right: 100px;margin-left: 400px;"><button (click)="Search()" class="btn btn-info">Search</button> 
+  <!-- <input type="text" style="width: 600px;margin-right: 100px;margin-left: 400px;"><button (click)="Search()" class="btn btn-info">Search</button>  -->
+  <h1>All Payments</h1>
   <br><br>
   <table class="table table-stripped">
     <tr>

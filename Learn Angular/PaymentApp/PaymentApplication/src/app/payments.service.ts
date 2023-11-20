@@ -32,7 +32,11 @@ export class PaymentsService {
     return resData
   }
 
-  
+  //get details using ID
+  getDetailsById(id:number):Observable<any>{
+    return this.http.get<any>(this.url+`/GetPaymentDetail+${id}`);
+  }
+
   // update(id: number, data: any): Observable<any> {
   //   return this.http.put<any>(`${this.url}/${id}`, data);
   // }
