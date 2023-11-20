@@ -16,28 +16,17 @@ export class PaymentsService {
     return this.http.get<any[]>(this.url+'/GetPaymentDetail');
   }
 
+
   get(id: number): Observable<any> {
-    return this.http.get<any>(`${this.url}/${id}`);
+    return this.http.get<any>(`${this.url}+'/GetPaymentDetail/${id}`);
   }
 
-  // create(data: any): Observable<any> {
-  //   return this.http.post<any>(this.url, data);
-  // }
-
-  // update(id: number, data: any): Observable<any> {
-  //   return this.http.put<any>(`${this.url}/${id}`, data);
-  // }
-
-  // delete(id: number): Observable<any> {
-  //   return this.http.delete<any>(`${this.url}/${id}`);
-  // }
-
+  
   Create(data:any){
     let resData:any="";
     let httpHeader:HttpHeaders=new HttpHeaders({
       Accept:"application/json"
     })
-
     this.http.post("https://8080-bdedfececadfabcaaaceeafebecebbffdafdefabcc.premiumproject.examly.io/api/PaymentDetail/PostPaymentDetail",data,{headers:httpHeader})
     .subscribe(res=>{
       resData=res;
@@ -47,4 +36,13 @@ export class PaymentsService {
     })
     return resData
   }
+  
+  // update(id: number, data: any): Observable<any> {
+  //   return this.http.put<any>(`${this.url}/${id}`, data);
+  // }
+
+  // delete(id: number): Observable<any> {
+  //   return this.http.delete<any>(`${this.url}/${id}`);
+  // }
+ 
 }

@@ -20,7 +20,7 @@ export class PayComponent implements OnInit {
 
   ngOnInit():void{
     this.loadItems();
-    this.loadItemsById();
+    // this.loadItemsById();
   }
 
   loadItems():void {
@@ -33,7 +33,5 @@ export class PayComponent implements OnInit {
     this.pay.Create(postForm.value);
     console.log("Added Successfully!!!");
   }
-
-  loadItemsById()
 
 }
