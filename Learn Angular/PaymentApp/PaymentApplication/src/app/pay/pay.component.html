@@ -33,7 +33,7 @@
 <button (click)="fetchDetails()">Fetch Details</button>
 
 <!-- Display Details -->
-<div *ngIf="selectedItemDetails">
+<div *ngIf="selectedItemDetails && !idNotFound;else noDetails" >
   <h2>Details of Selected Item</h2>
   <p>PaymentId: {{ selectedItemDetails.paymentDetailId }}</p>
   <p>Card Owner Name: {{ selectedItemDetails.cardOwnerName }}</p>
@@ -42,6 +42,10 @@
   <p>Security Code: {{ selectedItemDetails.securityCode }}</p>
   <!-- Add other properties as needed -->
 </div>
+<ng-template #noDetails>
+  <p>qwertyu</p>
+</ng-template>
+
 
 
   <!-- <input type="text" style="width: 600px;margin-right: 100px;margin-left: 400px;"><button (click)="Search()" class="btn btn-info">Search</button>  -->
