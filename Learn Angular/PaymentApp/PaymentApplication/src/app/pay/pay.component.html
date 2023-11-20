@@ -92,14 +92,16 @@
 <hr style="border: 2px solid black;">
 
 <!-- Update Details using ID -->
-<!-- cardOwnerName": "Chitra",
-    "cardNumber": "0987000321198623",
-    "expirationDate": "12/27",
-    "securityCode": "234" -->
 <h2>Update</h2>
 <label for="updateItemId">Enter ID to Update</label>
 <input type="number" id="updateItemId" [(ngModel)]="updateItemId" name="updateItemId">
 <br>
-<label for="updatedData">Enter Name to Update</label>
+<label for="updatedData">Enter CardOwnerName</label>
 <input type="text" id="updatedData" [(ngModel)]="updatedData.cardOwnerName" name="updateItemId"><br>
-<button (click)="updateDetails">Update</button>
+<label for="updatedData">Enter CardNumber</label>
+<input type="text" id="updatedData" [(ngModel)]="updatedData.cardNumber" name="updateItemId"><br>
+<label for="updatedData">Enter Expiry Date</label>
+<input type="text" id="updatedData" [(ngModel)]="updatedData.expirationDate" name="updateItemId"><br>
+<label for="updatedData">Enter Security Code</label>
+<input type="text" id="updatedData" [(ngModel)]="updatedData.securityCode" name="updateItemId"><br>
+<button (click)="updateDetails()">Update</button>
