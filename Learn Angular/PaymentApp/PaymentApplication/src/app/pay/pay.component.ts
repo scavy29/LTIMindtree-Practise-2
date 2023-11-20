@@ -45,6 +45,7 @@ export class PayComponent implements OnInit {
       this.selectedItemDetails=details;
     });
   }
+
   fetchDetails(): void {
     if (this.inputItemId) {
       this.pay.getDetailsById(this.inputItemId).subscribe((details) => {
@@ -58,20 +59,18 @@ export class PayComponent implements OnInit {
     }
   }
 
-  //Delete Using ID
-  // deleteItem():void{
-  //   if(this.deleteItemId)
-  //   {
-  //     this.pay.delete(this.deleteItemId).subscribe(
-  //       ()=>{
-  //         this.loadItems();
-  //         this.selectedItemId=null;
-  //         this.selectedItemDetails=null;
-  //       },
-  //       (error)=>{
-  //         console.error('Error Deleting',error);
-  //       }
-  //     )
-  //   }
-  // }
+  //Delete using Id
+  deleteItem():void{
+    if(this.deleteItemId){
+      this.pay.deleteById(this.deleteItemId).subscribe(
+        ()=>{
+          console.log('Item Delete Successfully!!!');
+        },
+        (error)=>{
+          console.error('Error deleting',error);
+        }
+      )
+    }
+  }
+
 }

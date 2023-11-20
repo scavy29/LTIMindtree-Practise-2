@@ -38,13 +38,9 @@ export class PaymentsService {
     return this.http.get<any>(url);
   }
 
-  //Delete using ID
-  delete(id: number): Observable<any> {
-    return this.http.delete<any>(`${this.url}/DeletePaymentDetail/${id}`);
+  //Delete Details using ID
+  deleteById(id:number):Observable<any>{
+    const url=`${this.url}/DeletePaymentDetail/${id}`;
+    return this.http.delete<any>(url);
   }
-  // update(id: number, data: any): Observable<any> {
-  //   return this.http.put<any>(`${this.url}/${id}`, data);
-  // }
-
- 
 }
