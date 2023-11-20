@@ -29,16 +29,11 @@ export class PayComponent implements OnInit {
     });
   }
 
-  loadItemsById():void{
-    this.pay.get(8).subscribe(data=>{
-      this.items=data;
-    });
-  }
-
   onSubmitPost(postForm:NgForm){
     this.pay.Create(postForm.value);
+    console.log("Added Successfully!!!");
   }
 
-
+  loadItemsById()
 
 }
