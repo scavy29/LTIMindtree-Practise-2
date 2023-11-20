@@ -38,12 +38,13 @@ export class PaymentsService {
     return this.http.get<any>(url);
   }
 
+  //Delete using ID
+  delete(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.url}/${id}`);
+  }
   // update(id: number, data: any): Observable<any> {
   //   return this.http.put<any>(`${this.url}/${id}`, data);
   // }
 
-  // delete(id: number): Observable<any> {
-  //   return this.http.delete<any>(`${this.url}/${id}`);
-  // }
  
 }

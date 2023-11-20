@@ -1,3 +1,33 @@
+<!-- Display all Details -->
+<h2>All Payments</h2>
+<br>
+<table class="table table-stripped">
+  <tr>
+    <th>Payment ID</th>
+    <th>Owner Name</th>
+    <th>Card Number</th>
+    <th>Expiry Date</th>
+    <th>Security Code</th>
+    <th></th>
+    <th>Actions</th>
+  </tr>
+  <tr *ngFor="let item of items">
+    <td>{{item.paymentDetailId}}</td>
+    <td>{{item.cardOwnerName}}</td>
+    <td>{{item.cardNumber}}</td>
+    <td>{{item.expirationDate}}</td>
+    <td>{{item.securityCode}}</td>
+    <td><button class="btn btn-info">Details</button></td>
+    <td><button (click)="Edit()" class="btn btn-primary">Edit</button></td>
+    <td><button (click)="Delete()" class="btn btn-warning">Delete</button></td>
+  </tr>
+</table>
+
+
+<hr style="border: 2px solid black;">
+
+
+<!-- Add Payment Details -->
 <h1>Create</h1>
 <form #postForm="ngForm" (ngSubmit)="onSubmitPost(postForm)">
   <div class="form-group">
@@ -23,18 +53,29 @@
 <hr style="border: 2px solid black;">
 
 
-<!-- Display Details -->
+<!-- Display Details using ID -->
 <h2>Details of Selected Item</h2>
 <label for="paymentDetailId">Enter PaymentID:</label>
 <input type="number" id="paymentDetailId" [(ngModel)]="inputItemId" name="inputItemId">
 <button (click)="fetchDetails()">Fetch Details</button>
 
 <div *ngIf="selectedItemDetails && !idNotFound;else noDetails" >
-  <p>PaymentId: {{ selectedItemDetails.paymentDetailId }}</p>
-  <p>Card Owner Name: {{ selectedItemDetails.cardOwnerName }}</p>
-  <p>Card Number: {{ selectedItemDetails.cardNumber }}</p>
-  <p>Expiry Date: {{ selectedItemDetails.expirationDate }}</p>
-  <p>Security Code: {{ selectedItemDetails.securityCode }}</p>
+  <table class="table table-stripped">
+    <tr>
+      <th>Payment ID</th>
+      <th>Owner Name</th>
+      <th>Card Number</th>
+      <th>Expiry Date</th>
+      <th>Security Code</th>
+    </tr>
+    <tr>
+      <td>{{selectedItemDetails.paymentDetailId}}</td>
+      <td>{{selectedItemDetails.cardOwnerName}}</td>
+      <td>{{selectedItemDetails.cardNumber}}</td>
+      <td>{{selectedItemDetails.expirationDate}}</td>
+      <td>{{selectedItemDetails.securityCode}}</td>
+    </tr>
+  </table>
   <!-- Add other properties as needed -->
 </div>
 <ng-template #noDetails>
@@ -45,25 +86,5 @@
   <!-- <input type="text" style="width: 600px;margin-right: 100px;margin-left: 400px;">
   <button (click)="Search()" class="btn btn-info">Search</button> -->
 
-  <h1>All Payments</h1>
-  <br><br>
-  <table class="table table-stripped">
-    <tr>
-      <th>Payment ID</th>
-      <th>Owner Name</th>
-      <th>Card Number</th>
-      <th>Expiry Date</th>
-      <th>Security Code</th>
-      <th>Actions</th>
-    </tr>
-    <tr *ngFor="let item of items">
-      <td>{{item.paymentDetailId}}</td>
-      <td>{{item.cardOwnerName}}</td>
-      <td>{{item.cardNumber}}</td>
-      <td>{{item.expirationDate}}</td>
-      <td>{{item.securityCode}}</td>
-      <td><button class="btn btn-info">Details</button></td>
-      <td><button (click)="Edit()" class="btn btn-primary">Edit</button></td>
-      <td><button (click)="Delete()" class="btn btn-warning">Delete</button></td>
-    </tr>
-  </table>
+
+  
