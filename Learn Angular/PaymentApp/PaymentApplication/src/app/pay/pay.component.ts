@@ -29,11 +29,7 @@ export class PayComponent implements OnInit {
   }
 
   onSubmitPost(postForm:NgForm){
-    this.pay.Create(postForm.value)
-    .subscribe(()=>{
-      this.r.navigate(['read']);
-      console.log("success")
-    })
+    this.pay.Create(postForm.value);
   }
 
 }

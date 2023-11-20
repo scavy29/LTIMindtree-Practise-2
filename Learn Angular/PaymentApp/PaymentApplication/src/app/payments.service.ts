@@ -7,8 +7,11 @@ import { Observable } from 'rxjs';
 })
 export class PaymentsService {
   private url='https://8080-bdedfececadfabcaaaceeafebecebbffdafdefabcc.premiumproject.examly.io/api/PaymentDetail';
+  // resData: string=""
 
+  
   constructor(private http:HttpClient) { }
+
 
   getAll(): Observable<any[]> {
     return this.http.get<any[]>(this.url+'/GetPaymentDetail');
@@ -31,10 +34,18 @@ export class PaymentsService {
   // }
 
   Create(data:any){
+    let resData:any="";
     let httpHeader:HttpHeaders=new HttpHeaders({
       Accept:"application/json"
     })
 
-    return this.http.post("https://8081-abbcbfeabdfabcaaaceeafebeccaddbefddaf.premiumproject.examly.io/api/PaymentDetail/PostPaymentDetail",data,{headers:httpHeader});
+    this.http.post("https://8080-bdedfececadfabcaaaceeafebecebbffdafdefabcc.premiumproject.examly.io/api/PaymentDetail/PostPaymentDetail",data,{headers:httpHeader})
+    .subscribe(res=>{
+      resData=res;
+    },
+    error=>{
+      resData=error
+    })
+    return resData
   }
 }
