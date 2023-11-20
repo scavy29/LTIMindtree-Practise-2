@@ -25,18 +25,4 @@ export class PayComponent implements OnInit {
       this.items=data;
     });
   }
-
-  createItems():void{
-    console.log("Called CreateItems");
-    if(this.newItemNames && this.newItemNames.length>0)
-    {
-      const newItems=this.newItemNames.map(name=>({name}));
-
-      this.pay.create(newItems).subscribe(()=>{
-        this.loadItems();
-        this.newItemNames=Array(this.newItemNames.length).fill('');
-      });
-    }
-  }
-
 }
