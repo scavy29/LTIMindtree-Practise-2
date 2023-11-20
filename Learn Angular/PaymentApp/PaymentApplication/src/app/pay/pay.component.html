@@ -28,9 +28,19 @@
 <br>
 <br>
 
-<h1>Details</h1>
-<div *ngIf="items">
-  <p>{{items.cardOwnerName}}</p>
+<label for="paymentDetailId">Enter PaymentID:</label>
+<input type="number" id="paymentDetailId" [(ngModel)]="inputItemId" name="inputItemId">
+<button (click)="fetchDetails()">Fetch Details</button>
+
+<!-- Display Details -->
+<div *ngIf="selectedItemDetails">
+  <h2>Details of Selected Item</h2>
+  <p>PaymentId: {{ selectedItemDetails.paymentDetailId }}</p>
+  <p>Card Owner Name: {{ selectedItemDetails.cardOwnerName }}</p>
+  <p>Card Number: {{ selectedItemDetails.cardNumber }}</p>
+  <p>Expiry Date: {{ selectedItemDetails.expirationDate }}</p>
+  <p>Security Code: {{ selectedItemDetails.securityCode }}</p>
+  <!-- Add other properties as needed -->
 </div>
 
 

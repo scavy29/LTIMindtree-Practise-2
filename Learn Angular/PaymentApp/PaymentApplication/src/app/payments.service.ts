@@ -34,7 +34,8 @@ export class PaymentsService {
 
   //get details using ID
   getDetailsById(id:number):Observable<any>{
-    return this.http.get<any>(this.url+`/GetPaymentDetail+${id}`);
+    const url=`${this.url}/GetPaymentDetail/${id}`;
+    return this.http.get<any>(url);
   }
 
   // update(id: number, data: any): Observable<any> {

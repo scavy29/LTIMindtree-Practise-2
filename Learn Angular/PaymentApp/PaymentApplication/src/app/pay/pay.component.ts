@@ -12,6 +12,7 @@ export class PayComponent implements OnInit {
   items: any[];
   selectedItemId:number;
   selectedItemDetails:any;
+  inputItemId:number;
 
   constructor(private pay:PaymentsService,private r:Router) { }
 
@@ -41,5 +42,12 @@ export class PayComponent implements OnInit {
     this.pay.getDetailsById(id).subscribe((details)=>{
       this.selectedItemDetails=details;
     });
+  }
+  fetchDetails(): void {
+    if (this.inputItemId) {
+      this.pay.getDetailsById(this.inputItemId).subscribe((details) => {
+        this.selectedItemDetails = details;
+      });
+    }
   }
 }
