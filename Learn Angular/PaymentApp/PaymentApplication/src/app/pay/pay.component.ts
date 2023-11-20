@@ -8,7 +8,7 @@ import { PaymentsService } from '../payments.service';
 })
 export class PayComponent implements OnInit {
   items: any[];
-  newItemName:string='';
+  newItemNames:string='';
   selectedItemId:number;
 
   constructor(private pay:PaymentsService) { }
@@ -26,15 +26,13 @@ export class PayComponent implements OnInit {
     });
   }
 
-  CreateItem():void{
-    if(this.newItemName)
+  createItems():void{
+    if(this.newItemNames && this.newItemNames.length>0)
     {
-      const newItem={name:this.newItemName};
-      this.pay.create(newItem).subscribe(()=>{
-        this.loadItems();
-        this.newItemName='';
-      });
+      const newItems:this.newItemNames.map(name=>({name}));
+
+      this.pay.create(It)
     }
   }
-  
+
 }

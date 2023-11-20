@@ -22,9 +22,9 @@ export class PaymentsService {
     return this.http.post<any>(this.url, data);
   }
 
-  // update(id: number, data: any): Observable<any> {
-  //   return this.http.put<any>(`${this.apiUrl}/${id}`, data);
-  // }
+  update(id: number, data: any): Observable<any> {
+    return this.http.put<any>(`${this.url}/${id}`, data);
+  }
 
   delete(id: number): Observable<any> {
     return this.http.delete<any>(`${this.url}/${id}`);
