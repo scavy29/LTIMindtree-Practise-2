@@ -4,37 +4,32 @@
       <label for="cardNumber">Card Number</label> <br>
       <input type="text" name="cardNumber" ngModel>
   </div>
-
   <div class="form-group">
       <label for="cardOwnerName">Card Owner Name</label><br>
       <input type="text" name="cardOwnerName"  ngModel>
   </div>
-  
-
   <div class="form-group">
       <label for="expirationDate">Expirty Date</label><br>
       <input type="text" name="expirationDate" ngModel>
   </div>
-
   <div class="form-group">
       <label for="securityCode">Security Code</label><br>
       <input type="text" name="securityCode" ngModel>
   </div>
-
   <div class="form-group">
       <button class="btn btn-primary my-3" type="submit">Submit</button>
   </div>
 </form>
-<br>
-<br>
+<hr style="border: 2px solid black;">
 
+
+<!-- Display Details -->
+<h2>Details of Selected Item</h2>
 <label for="paymentDetailId">Enter PaymentID:</label>
 <input type="number" id="paymentDetailId" [(ngModel)]="inputItemId" name="inputItemId">
 <button (click)="fetchDetails()">Fetch Details</button>
 
-<!-- Display Details -->
 <div *ngIf="selectedItemDetails && !idNotFound;else noDetails" >
-  <h2>Details of Selected Item</h2>
   <p>PaymentId: {{ selectedItemDetails.paymentDetailId }}</p>
   <p>Card Owner Name: {{ selectedItemDetails.cardOwnerName }}</p>
   <p>Card Number: {{ selectedItemDetails.cardNumber }}</p>
@@ -43,12 +38,13 @@
   <!-- Add other properties as needed -->
 </div>
 <ng-template #noDetails>
-  <p>qwertyu</p>
+  <p>No such ID exist</p>
 </ng-template>
+<hr style="border: 2px solid black;">
 
+  <!-- <input type="text" style="width: 600px;margin-right: 100px;margin-left: 400px;">
+  <button (click)="Search()" class="btn btn-info">Search</button> -->
 
-
-  <!-- <input type="text" style="width: 600px;margin-right: 100px;margin-left: 400px;"><button (click)="Search()" class="btn btn-info">Search</button>  -->
   <h1>All Payments</h1>
   <br><br>
   <table class="table table-stripped">

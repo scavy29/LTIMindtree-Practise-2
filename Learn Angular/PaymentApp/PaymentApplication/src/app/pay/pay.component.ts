@@ -48,7 +48,6 @@ export class PayComponent implements OnInit {
     if (this.inputItemId) {
       this.pay.getDetailsById(this.inputItemId).subscribe((details) => {
         this.selectedItemDetails = details;
-        this.idNotFound=false;
       },
       (error)=>{
         this.idNotFound=true;
