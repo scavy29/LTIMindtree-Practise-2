@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PaymentsService } from '../payments.service';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pay',
@@ -11,7 +13,7 @@ export class PayComponent implements OnInit {
   newItemNames:string[]=[];
   selectedItemId:number;
 
-  constructor(private pay:PaymentsService) { }
+  constructor(private pay:PaymentsService,private r:Router) { }
 
   // ngOnInit() {
   // }
@@ -25,4 +27,13 @@ export class PayComponent implements OnInit {
       this.items=data;
     });
   }
+
+  onSubmitPost(postForm:NgForm){
+    this.pay.Create(postForm.value)
+    .subscribe(()=>{
+      this.r.navigate(['read']);
+      console.log("success")
+    })
+  }
+
 }
