@@ -14,7 +14,11 @@ export class PayComponent implements OnInit {
   selectedItemDetails:any;
   inputItemId:number;
   idNotFound:boolean=false;
+
   deleteItemId:number;
+
+  updateItemId:number;
+  updatedData:any={};
 
   constructor(private pay:PaymentsService,private r:Router) { }
 
@@ -70,6 +74,20 @@ export class PayComponent implements OnInit {
           console.error('Error deleting',error);
         }
       )
+    }
+  }
+
+  //Update Details using Id
+  updateDetails():void{
+    if(this.updateItemId && Object.keys(this.updatedData).length>0){
+      this.pay.UpdateById(this.updateItemId,this.updatedData).subscribe(
+        ()=>{
+          console.log('Details Updated');
+        },
+        (error)=>{
+          console.error('Error Update');
+        }
+      );
     }
   }
 

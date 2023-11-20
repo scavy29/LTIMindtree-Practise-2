@@ -43,4 +43,10 @@ export class PaymentsService {
     const url=`${this.url}/DeletePaymentDetail/${id}`;
     return this.http.delete<any>(url);
   }
+
+  //Update Details Using ID
+  UpdateById(id:number,updatedData:any):Observable<any>{
+    const url=`${this.url}/UpdatePaymentDetail/${id}`;
+    return this.http.put<any>(url,updatedData);
+  }
 }
