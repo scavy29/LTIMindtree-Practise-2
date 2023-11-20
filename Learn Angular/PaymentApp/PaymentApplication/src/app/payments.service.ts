@@ -11,17 +11,12 @@ export class PaymentsService {
   
   constructor(private http:HttpClient) { }
 
-
+  //get all details Service
   getAll(): Observable<any[]> {
     return this.http.get<any[]>(this.url+'/GetPaymentDetail');
   }
 
-
-  get(id: number): Observable<any> {
-    return this.http.get<any>(`${this.url}+'/GetPaymentDetail/${id}`);
-  }
-
-  
+  //Create Service
   Create(data:any){
     let resData:any="";
     let httpHeader:HttpHeaders=new HttpHeaders({
@@ -36,6 +31,7 @@ export class PaymentsService {
     })
     return resData
   }
+
   
   // update(id: number, data: any): Observable<any> {
   //   return this.http.put<any>(`${this.url}/${id}`, data);

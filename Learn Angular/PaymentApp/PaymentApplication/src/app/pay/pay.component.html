@@ -24,14 +24,21 @@
       <button class="btn btn-primary my-3" type="submit">Submit</button>
   </div>
 </form>
-
-
 <br>
 <br>
-  <br>
+
+<!-- <div class="container">
+  <ul>
+    <li *ngFor="let item of items" (click)="selectItem(item.id)">
+      {{item.cardOwnerName}}
+    </li>
+  </ul>
+</div> -->
+
+
   <input type="text" style="width: 600px;margin-right: 100px;margin-left: 400px;"><button (click)="Search()" class="btn btn-info">Search</button> 
   <br><br>
-  <table class="table table-striped">
+  <table class="table table-stripped">
     <tr>
       <th>Payment ID</th>
       <th>Owner Name</th>

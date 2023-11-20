@@ -10,7 +10,6 @@ import { Router } from '@angular/router';
 })
 export class PayComponent implements OnInit {
   items: any[];
-  newItemNames:string[]=[];
   selectedItemId:number;
 
   constructor(private pay:PaymentsService,private r:Router) { }
@@ -20,18 +19,23 @@ export class PayComponent implements OnInit {
 
   ngOnInit():void{
     this.loadItems();
-    // this.loadItemsById();
   }
 
+  //Retrieve All Details  
   loadItems():void {
     this.pay.getAll().subscribe(data=>{
       this.items=data;
     });
   }
 
+  //Add Details
   onSubmitPost(postForm:NgForm){
     this.pay.Create(postForm.value);
     console.log("Added Successfully!!!");
   }
 
+  //Fetch Particular ID Details
+  selectItem(id:number):void{
+    this.selectedItemId=id;
+  }
 }
