@@ -90,42 +90,6 @@ export class PayComponent implements OnInit {
   //     );
   //   }
   // }
-  fetchAndUpdateDetails(): void {
-    if (this.updateItemId) {
-      this.pay.getDetailsById(this.updateItemId).subscribe(
-        (details) => {
-          this.selectedItemDetails = details;
-          this.idNotFound = false; // Reset the flag
-
-          // Optionally, you can pre-fill the form fields with existing details
-          this.updatedData.name = this.selectedItemDetails.name;
-          // Add other properties as needed
-
-          // Perform the update immediately after fetching details
-          this.performUpdate();
-        },
-        (error) => {
-          this.idNotFound = true; // Set the flag when an error occurs
-          console.error('Error fetching details:', error);
-        }
-      );
-    }
-  }
-
-  performUpdate(): void {
-    if (this.updateItemId && Object.keys(this.updatedData).length > 0) {
-      this.pay.UpdateById(this.updateItemId, this.updatedData).subscribe(
-        () => {
-          console.log('Details updated successfully');
-          // Optionally, update your UI or perform other actions after update
-          this.selectedItemDetails = null; // Reset details after update
-          this.updatedData = {}; // Reset updated data
-        },
-        (error) => {
-          console.error('Error updating details:', error);
-          // Optionally, display an error message or handle the error appropriately
-        }
-      );
     }
   }
 }
