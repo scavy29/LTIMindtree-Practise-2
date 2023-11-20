@@ -7,7 +7,6 @@ import { Observable } from 'rxjs';
 })
 export class PaymentsService {
   private url='https://8080-bdedfececadfabcaaaceeafebecebbffdafdefabcc.premiumproject.examly.io/api/PaymentDetail';
-  // resData: string=""
 
   
   constructor(private http:HttpClient) { }
@@ -17,9 +16,9 @@ export class PaymentsService {
     return this.http.get<any[]>(this.url+'/GetPaymentDetail');
   }
 
-  // get(id: number): Observable<any> {
-  //   return this.http.get<any>(`${this.url}/${id}`);
-  // }
+  get(id: number): Observable<any> {
+    return this.http.get<any>(`${this.url}/${id}`);
+  }
 
   // create(data: any): Observable<any> {
   //   return this.http.post<any>(this.url, data);
