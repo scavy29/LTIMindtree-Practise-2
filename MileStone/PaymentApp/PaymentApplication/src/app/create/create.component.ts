@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PaymentsService } from '../payments.service';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create',
@@ -9,14 +10,20 @@ import { NgForm } from '@angular/forms';
 })
 export class CreateComponent implements OnInit {
 
-  constructor(private p:PaymentsService) { }
+  constructor(private p:PaymentsService,private r:Router) { }
 
   ngOnInit() {
   }
 
+  // onSubmitPost(postForm:NgForm){
+  //   this.p.Create(postForm.value);
+  //   console.log("Added Successfully!!!");
+  // }
   onSubmitPost(postForm:NgForm){
-    this.p.Create(postForm.value);
-    console.log("Added Successfully!!!");
+    this.p.Create(postForm.value).
+    subscribe(()=>{
+      this.r.navigate(['read']);
+    })
   }
 
 }
