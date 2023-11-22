@@ -8,8 +8,8 @@ import { PayComponent } from './pay/pay.component';
 import { FormsModule } from '@angular/forms';
 import { ReadComponent } from './read/read.component';
 import { CreateComponent } from './create/create.component';
-import { ActivatedRoute } from '@angular/router';
-import { DeleteComponent } from './delete/delete.component';
+import { PaymentsService } from './payments.service';
+
 
 
 @NgModule({
@@ -17,8 +17,7 @@ import { DeleteComponent } from './delete/delete.component';
     AppComponent,
     PayComponent,
     ReadComponent,
-    CreateComponent,
-    DeleteComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,

@@ -43,11 +43,6 @@ export class PaymentsService {
     return this.http.get<any>(url);
   }
 
-  //Delete
-  deletePayment(itemid:number):Observable<any>{
-    return this.http.delete(`$(this.url)/${itemid}`);
-  }
-
   //Delete Details using ID
   deleteById(id:number):Observable<any>{
     const url=`${this.url}/DeletePaymentDetail/${id}`;
