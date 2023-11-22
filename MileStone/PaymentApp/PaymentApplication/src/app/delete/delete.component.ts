@@ -12,6 +12,7 @@ export class DeleteComponent implements OnInit {
   constructor(private p:PaymentsService) { }
 
   ngOnInit() {
+    this.loadData();
   }
 
   // deleteItem():void{
@@ -27,11 +28,6 @@ export class DeleteComponent implements OnInit {
   //   }
   // }
 
-  loadData(){
-    this.p.getDetailsById()
-  }
-  deleteItem(delitemid:number){
-    if(this.deleteItemId){
-      this.data
-  }
+  loadData
+
 }
