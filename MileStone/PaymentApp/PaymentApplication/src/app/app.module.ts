@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { ReadComponent } from './read/read.component';
 import { CreateComponent } from './create/create.component';
 import { PaymentsService } from './payments.service';
+import { DeleteidComponent } from './deleteid/deleteid.component';
 
 
 
@@ -17,7 +18,8 @@ import { PaymentsService } from './payments.service';
     AppComponent,
     PayComponent,
     ReadComponent,
-    CreateComponent
+    CreateComponent,
+    DeleteidComponent
   ],
   imports: [
     BrowserModule,
