@@ -18,18 +18,10 @@ export class PaymentsService {
 
   //Create Payment
   Create(data:any):Observable<any>{
-    // let resData:any="";
     let httpHeader:HttpHeaders=new HttpHeaders({
       Accept:"application/json"
     })
     return this.http.post<any>("https://8080-bdedfececadfabcaaaceeafebecebbffdafdefabcc.premiumproject.examly.io/api/PaymentDetail/PostPaymentDetail",data,{headers:httpHeader})
-    // .subscribe(res=>{
-    //   resData=res;
-    // },
-    // error=>{
-    //   resData=error
-    // })
-    // return resData
   }
 
   //Details
