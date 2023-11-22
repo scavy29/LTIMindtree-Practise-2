@@ -1,7 +1,5 @@
 <h2>All Payments</h2>
   <br>
-  <!-- <a  class="btn btn-info" [routerLink]="'/create'">Create</a> -->
-  <a [routerLink]="''">Create</a>
   <table class="table table-stripped">
     <tr>
       <th>Payment ID</th>
@@ -20,6 +18,6 @@
       <td>{{item.securityCode}}</td>
       <td><button class="btn btn-info">Details</button></td>
       <td><button (click)="Edit()" class="btn btn-primary">Edit</button></td>
-      <td><button (click)="Delete()" class="btn btn-warning">Delete</button></td>
+      <td><button [routerLink]="'/delete'" class="btn btn-warning">Delete</button></td>
     </tr>
   </table>

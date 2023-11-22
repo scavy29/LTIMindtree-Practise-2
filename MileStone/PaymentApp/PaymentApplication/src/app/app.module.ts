@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { ReadComponent } from './read/read.component';
 import { CreateComponent } from './create/create.component';
 import { ActivatedRoute } from '@angular/router';
+import { DeleteComponent } from './delete/delete.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { ActivatedRoute } from '@angular/router';
     PayComponent,
     ReadComponent,
     CreateComponent,
+    DeleteComponent,
   ],
   imports: [
     BrowserModule,
