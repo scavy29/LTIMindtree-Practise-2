@@ -2438,11 +2438,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/coder/project/workspace/Learn Angular/PaymentApp/PaymentAPI/PaymentAPI.csproj",
+      "projectUniqueName": "/home/coder/project/workspace/MileStone/PaymentApp/PaymentAPI/PaymentAPI.csproj",
       "projectName": "PaymentAPI",
-      "projectPath": "/home/coder/project/workspace/Learn Angular/PaymentApp/PaymentAPI/PaymentAPI.csproj",
+      "projectPath": "/home/coder/project/workspace/MileStone/PaymentApp/PaymentAPI/PaymentAPI.csproj",
       "packagesPath": "/home/coder/.nuget/packages/",
-      "outputPath": "/home/coder/project/workspace/Learn Angular/PaymentApp/PaymentAPI/obj/",
+      "outputPath": "/home/coder/project/workspace/MileStone/PaymentApp/PaymentAPI/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/coder/.nuget/NuGet/NuGet.Config"

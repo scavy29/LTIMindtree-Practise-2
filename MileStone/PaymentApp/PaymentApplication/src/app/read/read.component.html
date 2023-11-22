@@ -1,0 +1,25 @@
+<h2>All Payments</h2>
+  <br>
+  <!-- (click) = "handleSave()" -->
+  <button class="btn btn-info" [routerLink]={''}">Create</button>
+  <table class="table table-stripped">
+    <tr>
+      <th>Payment ID</th>
+      <th>Owner Name</th>
+      <th>Card Number</th>
+      <th>Expiry Date</th>
+      <th>Security Code</th>
+      <th></th>
+      <th>Actions</th>
+    </tr>
+    <tr *ngFor="let item of items">
+      <td>{{item.paymentDetailId}}</td>
+      <td>{{item.cardOwnerName}}</td>
+      <td>{{item.cardNumber}}</td>
+      <td>{{item.expirationDate}}</td>
+      <td>{{item.securityCode}}</td>
+      <td><button class="btn btn-info">Details</button></td>
+      <td><button (click)="Edit()" class="btn btn-primary">Edit</button></td>
+      <td><button (click)="Delete()" class="btn btn-warning">Delete</button></td>
+    </tr>
+  </table>
