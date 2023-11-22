@@ -8,21 +8,30 @@ import { PaymentsService } from '../payments.service';
 })
 export class DeleteComponent implements OnInit {
   deleteItemId:number;
+  item:any[];
   constructor(private p:PaymentsService) { }
 
   ngOnInit() {
   }
 
-  deleteItem():void{
+  // deleteItem():void{
+  //   if(this.deleteItemId){
+  //     this.p.deleteById(this.deleteItemId).subscribe(
+  //       ()=>{
+  //         console.log('Item Delete Successfully!!!');
+  //       },
+  //       (error)=>{
+  //         console.error('Error deleting',error);
+  //       }
+  //     )
+  //   }
+  // }
+
+  loadData(){
+    this.p.getDetailsById()
+  }
+  deleteItem(delitemid:number){
     if(this.deleteItemId){
-      this.p.deleteById(this.deleteItemId).subscribe(
-        ()=>{
-          console.log('Item Delete Successfully!!!');
-        },
-        (error)=>{
-          console.error('Error deleting',error);
-        }
-      )
-    }
+      this.data
   }
 }
