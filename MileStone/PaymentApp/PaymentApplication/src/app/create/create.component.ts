@@ -15,10 +15,6 @@ export class CreateComponent implements OnInit {
   ngOnInit() {
   }
 
-  // onSubmitPost(postForm:NgForm){
-  //   this.p.Create(postForm.value);
-  //   console.log("Added Successfully!!!");
-  // }
   onSubmitPost(postForm:NgForm){
     this.p.Create(postForm.value).
     subscribe(()=>{
