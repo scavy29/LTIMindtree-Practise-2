@@ -1,0 +1,106 @@
+<p>schedule-form works!</p>
+<h2>Schedule Pick-Up</h2>
+<form [formGroup]="scheduleForm" (ngSubmit)='onSubmit()'>
+ 
+    <div>
+ 
+        <div class="form-group">
+ 
+            <div>
+ 
+                <label for="fullName">Full Name</label>
+ 
+                <input type="text" id="fullName" name="fullName" formControlName="fullName" class="form-control">
+ 
+            </div>
+ 
+            <div>
+ 
+                <label for="mobileNumber">Mobile Number</label>
+ 
+                <input type="text" id="mobileNumber" name="mobileNumber" formControlName="mobileNumber"
+                    class="form-control">
+ 
+            </div>
+ 
+            <div>
+ 
+                <label for="email">Email ID</label>
+ 
+                <input type="email" id="email" name="email" formControlName="email" class="form-control">
+ 
+            </div>
+            <div>
+ 
+                <label for="address">Address</label>
+ 
+                <input type="address" id="address" name="address" formControlName="address" class="form-control">
+ 
+            </div>
+            <div>
+ 
+                <label for="area">Area</label>
+ 
+                <input type="area" id="area" name="area" formControlName="area" class="form-control">
+ 
+            </div>
+            <div>
+ 
+                <label for="pincode">Pincode</label>
+ 
+                <input type="pincode" id="pincode" name="pincode" formControlName="pincode" class="form-control">
+ 
+            </div>
+            <div>
+ 
+                <label for="pickupDay">Pickup Day</label>
+ 
+                <input type="pickupDay" id="pickupDay" name="pickupDay" formControlName="pickupDay"
+                    class="form-control">
+ 
+            </div>
+            <div>
+ 
+                <label for="pickupTimeSlot">Pickup Time</label>
+ 
+                <input type="pickupTimeSlot" id="pickupTimeSlot" name="pickupTimeSlot" formControlName="pickupTimeSlot"
+                    class="form-control">
+ 
+            </div>
+            <div>
+ 
+                <label for="packageId">Package</label>
+                <select id="packageId" name="packageId" formControlName="packageId" class="form-control">
+ 
+                    <option value="Wash & Fold ">Wash & Fold (Per/kg)</option>
+ 
+                    <option value="Wash & Iron">Wash & Iron (Per/kg)</option>
+ 
+                    <option value="Individual Package">Individual Package (60 Clothes/month)</option>
+ 
+                    <option value="Family Package">Family Package (110 Clothes/month)</option>
+                    <option value="Pay Per CLoth">Pay Per CLoth</option>
+                    <option value="Saree Polishing">Saree Polishing</option>
+                    <option value="DryCleaning">DryCleaning</option>
+                    <option value="Premium Laundry">Premium Laundry</option>
+ 
+                </select>
+ 
+            </div>
+ 
+            <br>
+ 
+            <p>
+ 
+                <button type="submit" class="btn btn-info">Save</button>
+ 
+            </p>
+ 
+ 
+ 
+ 
+        </div>
+ 
+    </div>
+ 
+</form>
