@@ -9,35 +9,20 @@
     expect(tableHeaders.length).toBe(12); // Adjust the count based on your actual table structure
   }); -->
 
-  <div class="table">
 <table>
     <tr>
-        <thead>ID</thead>
-        <th>Name</th>
-        <th>Name</th>
-        <th>Name</th>
-        <th>Name</th>
-        <th>Name</th>
-        <th>Name</th>
-        <th>Name</th>
-        <th>Name</th>
-        <th>Name</th>
-        <th>Name</th>
-        <th>Name</th>
+        <thead>Id</thead>
+        <th>FullName</th>
+        <th>Mobile Number</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Area</th>
+        <th>Pincode</th>
+        <th>Pick Up Day</th>
+        <th>Time</th>
     </tr>
     <tr *ngFor="let i of items">
         <td>{{Id.items}}</td>
         <td>{{Name.items}}</td>
-        <td>{{Name.items}}</td>
-        <td>{{Name.items}}</td>
-        <td>{{Name.items}}</td>
-        <td>{{Name.items}}</td>
-        <td>{{Name.items}}</td>
-        <td>{{Name.items}}</td>
-        <td>{{Name.items}}</td>
-        <td>{{Name.items}}</td>
-        <td>{{Name.items}}</td>
-        <td>{{Name.items}}</td>
     </tr>
 </table>
-</div>
