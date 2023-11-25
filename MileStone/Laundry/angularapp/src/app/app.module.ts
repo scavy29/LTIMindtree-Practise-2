@@ -4,14 +4,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { ScheduleFormComponent } from './schedule-form/schedule-form.component';
 import { ScheduleDetailsComponent } from './schedule-details/schedule-details.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent, 
-    ScheduleFormComponent,
     ScheduleDetailsComponent,
     NavbarComponent
   ],

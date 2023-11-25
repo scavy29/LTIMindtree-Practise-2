@@ -1,4 +1,4 @@
-<p>schedule-form works!</p>
+<!-- <p>schedule-form works!</p>
 <h2>Schedule Pick-Up</h2>
 <form [formGroup]="scheduleForm" (ngSubmit)='onSubmit()'>
  
@@ -84,6 +84,98 @@
                     <option value="DryCleaning">DryCleaning</option>
                     <option value="Premium Laundry">Premium Laundry</option>
  
+                </select>
+ 
+            </div>
+ 
+            <br>
+ 
+            <p>
+ 
+                <button type="submit" class="btn btn-info">Save</button>
+ 
+            </p>
+ 
+ 
+ 
+ 
+        </div>
+ 
+    </div>
+ 
+</form> -->
+<form [formGroup]="scheduleForm" (ngSubmit)='onSubmit()'>
+ 
+    <div>
+ 
+        <div class="form-group">
+ 
+            <div>
+ 
+                <label for="fullName">Full Name</label>
+ 
+                <input type="text" id="fullName" name="fullName" formControlName="fullName" class="form-control">
+ 
+            </div>
+ 
+            <div>
+ 
+                <label for="mobileNumber">Mobile Number</label>
+ 
+                <input type="text" id="mobileNumber" name="mobileNumber" formControlName="mobileNumber"
+                    class="form-control">
+ 
+            </div>
+ 
+            <div>
+ 
+                <label for="email">Email ID</label>
+ 
+                <input type="email" id="email" name="email" formControlName="email" class="form-control">
+ 
+            </div>
+            <div>
+ 
+                <label for="address">Address</label>
+ 
+                <input type="address" id="address" name="address" formControlName="address" class="form-control">
+ 
+            </div>
+            <div>
+ 
+                <label for="area">Area</label>
+ 
+                <input type="area" id="area" name="area" formControlName="area" class="form-control">
+ 
+            </div>
+            <div>
+ 
+                <label for="pincode">Pincode</label>
+ 
+                <input type="pincode" id="pincode" name="pincode" formControlName="pincode" class="form-control">
+ 
+            </div>
+            <div>
+ 
+                <label for="pickupDay">Pickup Day</label>
+ 
+                <input type="pickupDay" id="pickupDay" name="pickupDay" formControlName="pickupDay"
+                    class="form-control">
+ 
+            </div>
+            <div>
+ 
+                <label for="pickupTimeSlot">Pickup Time</label>
+ 
+                <input type="pickupTimeSlot" id="pickupTimeSlot" name="pickupTimeSlot" formControlName="pickupTimeSlot"
+                    class="form-control">
+ 
+            </div>
+            <div>
+ 
+                <label for="packageId">Package</label>
+                <select id="packageId" *ngFor="let i of items  name="packageId" formControlName="packageId" class="form-control">
+                
                 </select>
  
             </div>

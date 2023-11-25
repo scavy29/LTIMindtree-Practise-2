@@ -61,7 +61,8 @@ import { ScheduleService } from '../services/schedule-service.service';
   styleUrls: ['./schedule-form.component.css']
 })
 export class ScheduleFormComponent implements OnInit {
- 
+ items:any[]
+
   constructor(private fb:FormBuilder,private ss:ScheduleService) { }
   scheduleForm=this.fb.group({
     fullName:[''],
@@ -79,7 +80,10 @@ export class ScheduleFormComponent implements OnInit {
  
   ngOnInit(): void {
   }
- 
+
+  loadpkg():void{
+    this.ss.getPackages().subscribe((data)=>this.items=data)
+  }
 }
  
 
