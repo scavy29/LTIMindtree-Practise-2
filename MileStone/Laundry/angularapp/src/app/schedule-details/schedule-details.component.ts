@@ -11,6 +11,8 @@ export class ScheduleDetailsComponent implements OnInit {
   packageOptions:any[]
   statusOptions:any[]
   items:any[]
+  scheduleId:number
+  statusId:number
 
   constructor(private s:ScheduleService) { }
 
@@ -27,5 +29,5 @@ export class ScheduleDetailsComponent implements OnInit {
     .subscribe(
       data=>{this.statusOptions=data}
     )
-  } 
+  }
 }
