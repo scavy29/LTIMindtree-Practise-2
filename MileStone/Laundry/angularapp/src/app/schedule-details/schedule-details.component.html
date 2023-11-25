@@ -18,11 +18,10 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-      <td>{{schedules.id}}</td>
-      <td>{{schedules.fullName}}</td>
-      <td>{{schedules.mobileNumber}}</td>
-      <td>eerty</td>
+    <tr *ngFor="let s of schedules">
+      <td>{{s.id}}</td>
+      <td>{{s.fullName}}</td>
+      <td>{{s.mobileNumber}}</td>
       <td>eerty</td>
       <td>eerty</td>
       <td>eerty</td>
