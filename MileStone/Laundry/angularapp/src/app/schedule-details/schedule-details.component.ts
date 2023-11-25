@@ -13,9 +13,6 @@ export class ScheduleDetailsComponent implements OnInit {
   constructor(private s:ScheduleService) { }
 
   ngOnInit(): void {
-    this.s.getSchedules().subscribe(
-      (data)=>
-      this.items=data
-    )
+    this.s.getSchedules()
   }
 }

@@ -95,13 +95,10 @@ describe('ScheduleDetailsComponent', () => {
 
   fit('ScheduleDetailsComponent_should_render_a_table_with_specific_columns', () => {
     const tableElement = fixture.debugElement.query(By.css('table'));
-    console.log(tableElement);
     expect(tableElement).toBeTruthy();
 
     const tableHeaders = tableElement.queryAll(By.css('thead th'));
-    console.log(tableHeaders);
     expect(tableHeaders.length).toBe(12); // Adjust the count based on your actual table structure
-
   });
 
   fit('ScheduleDetailsComponent_should_render_schedule_data_correctly', () => {
