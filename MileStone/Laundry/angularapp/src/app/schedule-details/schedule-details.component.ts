@@ -30,4 +30,6 @@ export class ScheduleDetailsComponent implements OnInit {
       data=>{this.statusOptions=data}
     )
   }
+
+  
 }
