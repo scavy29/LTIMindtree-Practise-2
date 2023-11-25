@@ -7,12 +7,25 @@ import { ScheduleService } from '../services/schedule-service.service';
   styleUrls: ['./schedule-details.component.css']
 })
 export class ScheduleDetailsComponent implements OnInit {
-
+  schedules:any[]
+  packageOptions:any[]
+  statusOptions:any[]
   items:any[]
 
   constructor(private s:ScheduleService) { }
 
   ngOnInit(): void {
     this.s.getSchedules()
-  }
+    .subscribe(
+      data=>{this.schedules=data}
+    )
+    this.s.getPackages()
+    .subscribe(
+      data=>{this.packageOptions=data}
+    )
+    this.s.getStatuses()
+    .subscribe(
+      data=>{this.statusOptions=data}
+    )
+  } 
 }

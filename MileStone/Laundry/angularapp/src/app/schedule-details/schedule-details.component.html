@@ -1,7 +1,8 @@
 <!-- <p>schedule-details works!</p> -->
 
 
-<!-- fit('ScheduleDetailsComponent_should_render_a_table_with_specific_columns', () => {
+
+  <!-- fit('ScheduleDetailsComponent_should_render_a_table_with_specific_columns', () => {
     const tableElement = fixture.debugElement.query(By.css('table'));
     expect(tableElement).toBeTruthy();
 
@@ -10,8 +11,9 @@
   }); -->
 
 <table>
+    <thead>
     <tr>
-        <thead>Id</thead>
+        <th>Id</th>
         <th>FullName</th>
         <th>Mobile Number</th>
         <th>Email</th>
@@ -21,8 +23,11 @@
         <th>Pick Up Day</th>
         <th>Time</th>
     </tr>
+    </thead>
+    <tbody>
     <tr *ngFor="let i of items">
         <td>{{Id.items}}</td>
         <td>{{Name.items}}</td>
     </tr>
+</tbody>
 </table>

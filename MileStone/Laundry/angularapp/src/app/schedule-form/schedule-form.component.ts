@@ -75,12 +75,9 @@ export class ScheduleFormComponent implements OnInit {
     packageId:['']
   })
   onSubmit(){
- 
   }
  
   ngOnInit(): void {
- 
- 
   }
  
 }
