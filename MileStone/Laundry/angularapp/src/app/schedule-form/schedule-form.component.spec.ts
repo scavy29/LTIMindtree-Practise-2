@@ -81,7 +81,6 @@ describe('ScheduleFormComponent', () => {
 
   fit('Schedule_Form_Component_should_render_the_Schedule_Pick_Up_header', () => {
     const headerElement = fixture.debugElement.query(By.css('h2'));
-    console.log(headerElement);
     expect(headerElement['nativeElement'].textContent).toContain('Schedule Pick-Up');
   
   });

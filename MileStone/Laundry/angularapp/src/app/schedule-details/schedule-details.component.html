@@ -1,1 +1,43 @@
-<p>schedule-details works!</p>
+<!-- <p>schedule-details works!</p> -->
+
+
+<!-- fit('ScheduleDetailsComponent_should_render_a_table_with_specific_columns', () => {
+    const tableElement = fixture.debugElement.query(By.css('table'));
+    expect(tableElement).toBeTruthy();
+
+    const tableHeaders = tableElement.queryAll(By.css('thead th'));
+    expect(tableHeaders.length).toBe(12); // Adjust the count based on your actual table structure
+  }); -->
+
+  <div class="table">
+<table>
+    <tr>
+        <thead>ID</thead>
+        <th>Name</th>
+        <th>Name</th>
+        <th>Name</th>
+        <th>Name</th>
+        <th>Name</th>
+        <th>Name</th>
+        <th>Name</th>
+        <th>Name</th>
+        <th>Name</th>
+        <th>Name</th>
+        <th>Name</th>
+    </tr>
+    <tr *ngFor="let i of items">
+        <td>{{Id.items}}</td>
+        <td>{{Name.items}}</td>
+        <td>{{Name.items}}</td>
+        <td>{{Name.items}}</td>
+        <td>{{Name.items}}</td>
+        <td>{{Name.items}}</td>
+        <td>{{Name.items}}</td>
+        <td>{{Name.items}}</td>
+        <td>{{Name.items}}</td>
+        <td>{{Name.items}}</td>
+        <td>{{Name.items}}</td>
+        <td>{{Name.items}}</td>
+    </tr>
+</table>
+</div>
