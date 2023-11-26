@@ -1,11 +1,17 @@
 <!-- <p>list works!</p> -->
-<table>
+<table class="table table-striped">
     <thead>
         <tr>
-        <th></th>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Clother Per/month</th>
         </tr>
     </thead>
     <tr *ngFor="let i of alldet">
-        <td>{{i.</td>
+        <td>{{i.id}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.description}}</td>
+        <td>{{i.clothesPerMonth}}</td>
     </tr>
 </table>
