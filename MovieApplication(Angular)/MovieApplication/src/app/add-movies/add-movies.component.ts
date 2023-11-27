@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MovieserviceService } from '../services/movieservice.service';
 import { Imovie } from '../model/imovie';
 import { Router } from '@angular/router';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-add-movies',
@@ -25,6 +26,7 @@ moviedata:Imovie = {id:0,name:'',yearrelease:0,rating:0}
       }
       )
   }
+  
   ngOnInit() {
   }
 

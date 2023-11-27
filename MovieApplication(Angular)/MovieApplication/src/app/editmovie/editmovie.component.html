@@ -1,6 +1,6 @@
 <h2> Edit Movies </h2>
 <hr>
-<form (ngSubmit)="saveData(moviedata)" #movieform="ngForm">
+<form #movieform="ngForm" (ngSubmit)="saveData(movieform)">
 <div>
     <label for="id"> Id
     <input type="text" id="id" name="id" readonly [(ngModel)]="moviedata.id">
