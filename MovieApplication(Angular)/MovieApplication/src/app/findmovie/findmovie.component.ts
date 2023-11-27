@@ -11,8 +11,11 @@ import { Imovie } from '../model/imovie';
 export class FindmovieComponent implements OnInit {
 
   constructor(private ms:MovieserviceService,private ar:ActivatedRoute) { }
+  
   moviedata:Imovie
+  
   id:number
+  
   ngOnInit() {
     const tid=this.ar.snapshot.paramMap.get('id')
     this.id=Number(tid)
