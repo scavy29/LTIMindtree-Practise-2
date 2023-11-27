@@ -20,6 +20,7 @@ private url="https://8080-faebfbbfffabcaaaceeafebeccaddbefddaf.premiumproject.ex
   }
   
   httpOptions={headers:new HttpHeaders({'Content-type':'application/json'})}
+  
   addMovie(moviedata:Imovie):Observable<Imovie>
   {
     return this.httpclient.post<Imovie>(this.url+'/AddMovies',moviedata,this.httpOptions)

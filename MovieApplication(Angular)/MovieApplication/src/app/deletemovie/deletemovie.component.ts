@@ -18,10 +18,12 @@ export class DeletemovieComponent implements OnInit {
       this.id=Number(tid)
       this.getMovie(this.id)
     }
-  getMovie(id:number)
+  
+    getMovie(id:number)
   {
     this.ms.getMovie(id).subscribe((data:Imovie)=>this.moviedata = data)
   }
+
   deleteData(movie:Imovie)
   {
     this.moviedata=movie
