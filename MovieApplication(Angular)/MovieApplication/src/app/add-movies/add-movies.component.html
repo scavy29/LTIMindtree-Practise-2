@@ -1,10 +1,11 @@
 <h2> Adding Movies </h2>
 <hr>
-<form (ngSubmit)="saveData(moviedata)" #movieform="ngForm">
+<form #movieform="ngForm" (ngSubmit)="saveData(moviedata)" >
 
     <div>
         <label for="name">Movie Name </label>
         <input type="text" id="name" name="name" placeholder="Enter Movie Name"  aria-describedby="emailHelp"  [(ngModel)]="moviedata.name" required #name="ngModel">
+        <span *ngIf=""></span>
     </div>
 
     
@@ -19,7 +20,7 @@
     </div>
     <br><br>
     <p>
-        <input type="submit" class="btn btn-success" value= "Save" [disabled]="!movieform.valid">
+        <input type="submit" class="btn btn-success" value= "Save" [disabled]="movieform.invalid">
     </p>
 
 </form>
