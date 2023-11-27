@@ -31,6 +31,6 @@ import { ReactformComponent } from './reactform/reactform.component';
     ReactiveFormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [MenuComponent]
 })
 export class AppModule { }

@@ -5,13 +5,14 @@
     <div>
         <label for="name">Movie Name </label>
         <input type="text" id="name" name="name" placeholder="Enter Movie Name"  aria-describedby="emailHelp"  [(ngModel)]="moviedata.name" required #name="ngModel">
-        <span *ngIf=""></span>
+        <span *ngIf="name.dirty || name.touched" class="text-danger">Required</span>
     </div>
 
     
     <div>
         <label for="rating">Rating </label>
         <input type="text" id="rating" name="rating" placeholder="Enter Rating" [(ngModel)]="moviedata.rating"  #rating="ngModel" min="1" max="5">
+        <span *ngIf= "(rating>10) || (rating<0) || rating.touched">Rating Should be Between 0 ot 10</span>
     </div>
 
     <div>
