@@ -29,7 +29,7 @@ namespace JobPortal.Models
         [StringLength(20)]
         public string Status {get;set;}
        
-        [ForeignKey("JobTitle")]
+        // [ForeignKey("JobTitle")]
         public Job? Job {get;set;}
     }
 }

@@ -63,39 +63,39 @@ namespace JobPortal.Controllers
         // }
 
         //POST: /api/Application
-        [HttpPost]
-        [Route("/api/Application")]
-        public IActionResult AddApplication(Application app)
-        {
-            try
-            {
-                if(app==null)
-                {
-                    return BadRequest("Application is invalid");
-                }
-
-                _context.Application.Add(app);
-                _context.SaveChanges();
-                return Ok(app);   
-            }
-            catch(Exception ex)
-            {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
-            }
-        }
+        // [HttpPost]
+        // [Route("/api/Application")]
+        // public IActionResult AddApplication(Application app)
+        // {
+        //     try
+        //     {
+        //         if(app!=null)
+        //         {
+        //             _context.Application.Add(app);
+        //         _context.SaveChanges();
+        //         return Ok(app); 
+        //         }
+        //             return BadRequest("Application is invalid");
+                  
+        //     }
+        //     catch(Exception ex)
+        //     {
+        //         return StatusCode(500, $"Internal server error: {ex.Message}");
+        //     }
+        // }
 
         //GET: /api/Application/GetJobApplicatiopnsByUserId
-        [HttpGet]
-        [Route("/api/Application/GetJobApplicatiopnsByUserId")]
-        public IActionResult GetJobApplicatiopnsByUserId(int id)
-        {
-            var app=_context.Jobs.Find(id);
-            if(app==null)
-            {
-                return NotFound($"Job Application with ID:{id} not found");
-            }
-            return Ok(app);
-        }
+        // [HttpGet]
+        // [Route("/api/Application/GetJobApplicatiopnsByUserId")]
+        // public IActionResult GetJobApplicatiopnsByUserId(int id)
+        // {
+        //     var app=_context.Jobs.Find(id);
+        //     if(app==null)
+        //     {
+        //         return NotFound($"Job Application with ID:{id} not found");
+        //     }
+        //     return Ok(app);
+        // }
 
     }
 }

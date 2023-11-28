@@ -29,19 +29,18 @@ namespace JobPortal.Controllers
 
         // PUT: api/Job/{Id}
         [HttpPut("api/Job/{Id}")]
-        public async Task<IActionResult> UpdateJob(int id, [FromBody] Job j)
+        public IActionResult UpdateJob(int id,Job j)
         {
             try
             {
-                var j = await _context.Job.FindAsync(id);
+                var updjob = _context.Jobs.Find(id);
 
-                if (j == null)
+                if (updjob == null)
                 {
                     return NotFound($"Job with {id} not found.");
                 }
-                await _context.SaveChangesAsync();
-
-                return Ok(j);
+                _context.SaveChanges();
+                return Ok(updjob);
             }
             catch (Exception ex)
             {
@@ -56,8 +55,8 @@ namespace JobPortal.Controllers
         {
             try
             {
-                var jobs = await _context.Job.ToListAsync();
-                return Ok(job);
+                var jobs = await _context.Jobs.ToListAsync();
+                return Ok(jobs);
             }
             catch (Exception ex)
             {
@@ -72,7 +71,7 @@ namespace JobPortal.Controllers
         {
             try
             {
-                var positionTitles = _context.Job.Select(j => j.Title).ToList();
+                var positionTitles = _context.Jobs.Select(j => j.Title).ToList();
                 return Ok(positionTitles);
             }
             catch (Exception ex)
@@ -106,7 +105,7 @@ namespace JobPortal.Controllers
         }
 
     
-        [HttpDelete("positions/delete")]
+        // [HttpDelete("positions/delete")]
         // public async Task<IActionResult> DeleteJobPositions()
         // {
         //     try
@@ -123,6 +122,5 @@ namespace JobPortal.Controllers
         //         return StatusCode(500, $"Internal server error: {ex.Message}");
         //     }
         // }
-    // }
     }
 }
