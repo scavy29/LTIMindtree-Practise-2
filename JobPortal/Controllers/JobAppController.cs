@@ -39,6 +39,22 @@ namespace JobPortal.Controllers
                 {
                     return NotFound($"Job with {id} not found.");
                 }
+
+
+//                 {
+//   "jobID": 0,
+//   "jobTitle": "Resource manager",
+//   "department": "HR",
+//   "location": "Gurgaon",
+//   "responsibility": "Manage Activities ",
+//   "qualification": "MCA,Btech,BE",
+//   "deadLine": "2023-11-28",
+//   "category": "Non-Technical",
+//   "applications": null
+// }
+                updjob.jobTitle=j.jobTitle;
+                updjob/
+
                 _context.SaveChanges();
                 return Ok(updjob);
             }
@@ -63,6 +79,28 @@ namespace JobPortal.Controllers
                 return StatusCode(500, $"Internal server error: {ex.Message}");
             }
         }
+
+        // DELETE: api/Job/{Id}
+        [HttpDelete("api/Job/{Id}")]
+        public IActionResult DeleteJob(int id)
+        {
+            try
+            {
+                var jid=_context.Jobs.Find(id);
+                if(jid!=null)
+                {
+                    _context.Remove(jid);
+                    _context.SaveChanges();
+                    return Ok(jid);
+                }
+                return BadRequest();
+            }
+                catch(Exception ex)
+                {
+                    return StatusCode(500, $"Internal server error: {ex.Message}");
+                }
+        }
+        
 
         // GET: api/Job/JobTitle
         [HttpGet]
