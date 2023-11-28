@@ -71,7 +71,7 @@ namespace JobPortal.Controllers
         {
             try
             {
-                var positionTitles = _context.Jobs.Select(j => j.title==j.JobTitle).ToList();
+                var positionTitles = _context.Jobs.Select(j => title===.JobTitle).ToList();
                 return Ok(positionTitles);
             }
             catch (Exception ex)
