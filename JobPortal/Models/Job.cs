@@ -2,10 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 
 namespace JobPortal.Models
 {
-    public class Jobs
+    public class Job
     {
         [Key]
         public int JobID {get;set;}
@@ -36,7 +38,7 @@ namespace JobPortal.Models
         public string Category {get;set;}   // free job or premium job
  
         // Reference to related job applications
-        [InverseProperty("Job")]
+        // [InverseProperty("Job")]
         public ICollection<Application> Applications {get;set;}
     }
 }

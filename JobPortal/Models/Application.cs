@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
  
-namespace JobApp.Models
+namespace JobPortal.Models
 {
     public class Application
     {

@@ -13,7 +13,7 @@ namespace JobPortal.Controllers
     {
         private readonly ApplicationDbContext _context; // Replace 'ApplicationDbContext' with your DbContext class
 
-        public JobController(ApplicationDbContext context)
+        public JobAppController(ApplicationDbContext context)
         {
             _context = context;
         }
@@ -29,18 +29,16 @@ namespace JobPortal.Controllers
 
         // PUT: api/Job/{Id}
         [HttpPut("api/Job/{Id}")]
-        public async Task<IActionResult> UpdateJob(int id, [FromBody] Jobs j)
+        public async Task<IActionResult> UpdateJob(int id, [FromBody] Job j)
         {
             try
             {
-                var j = await _context.Jobs.FindAsync(id);
+                var j = await _context.Job.FindAsync(id);
 
                 if (j == null)
                 {
                     return NotFound($"Job with {id} not found.");
                 }
-
-                j.IsClosed = isClosed;
                 await _context.SaveChangesAsync();
 
                 return Ok(j);
@@ -58,8 +56,8 @@ namespace JobPortal.Controllers
         {
             try
             {
-                var jobs = await _context.Jobs.ToListAsync();
-                return Ok(jobs);
+                var jobs = await _context.Job.ToListAsync();
+                return Ok(job);
             }
             catch (Exception ex)
             {
@@ -74,7 +72,7 @@ namespace JobPortal.Controllers
         {
             try
             {
-                var positionTitles = _context.Jobs.Select(j => j.Title).ToList();
+                var positionTitles = _context.Job.Select(j => j.Title).ToList();
                 return Ok(positionTitles);
             }
             catch (Exception ex)
@@ -86,7 +84,7 @@ namespace JobPortal.Controllers
         //POST: api/Job
         [HttpPost]
         [Route("AddJob")]
-        public async Task<IActionResult> AddJob([FromBody] Jobs j)
+        public async Task<IActionResult> AddJob([FromBody] Job j)
         {
             try
             {
@@ -95,7 +93,7 @@ namespace JobPortal.Controllers
                     return BadRequest("Job position data is invalid.");
                 }
 
-                _context.Jobs.Add(j);
+                _context.Job.Add(j);
                 await _context.SaveChangesAsync();
 
                 return Ok(j);
@@ -109,21 +107,22 @@ namespace JobPortal.Controllers
 
     
         [HttpDelete("positions/delete")]
-        public async Task<IActionResult> DeleteJobPositions()
-        {
-            try
-            {
-                var jobPositions = await _context.JobPositions.ToListAsync();
-                _context.JobPositions.RemoveRange(jobPositions);
-                await _context.SaveChangesAsync();
-                return Ok(jobPositions);
+        // public async Task<IActionResult> DeleteJobPositions()
+        // {
+        //     try
+        //     {
+        //         var jobPositions = await _context.JobPositions.ToListAsync();
+        //         _context.JobPositions.RemoveRange(jobPositions);
+        //         await _context.SaveChangesAsync();
+        //         return Ok(jobPositions);
 
-                //return NoContent();
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
-            }
-        }
+        //         //return NoContent();
+        //     }
+        //     catch (Exception ex)
+        //     {
+        //         return StatusCode(500, $"Internal server error: {ex.Message}");
+        //     }
+        // }
+    // }
     }
 }

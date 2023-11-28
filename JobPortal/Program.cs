@@ -1,3 +1,7 @@
+using System;
+using Microsoft.EntityFrameworkCore;
+using JobPortal.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
