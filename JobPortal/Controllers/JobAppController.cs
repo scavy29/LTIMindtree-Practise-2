@@ -72,8 +72,6 @@ namespace JobPortal.Controllers
             try
             {
                 var positionTitles = _context.Jobs.FirstOrDefault(j=>j.JobTitle==title);
-
-
                 return Ok(positionTitles);
             }
             catch (Exception ex)
