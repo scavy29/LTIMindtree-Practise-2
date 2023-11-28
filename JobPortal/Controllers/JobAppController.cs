@@ -8,7 +8,7 @@ using JobPortal.Models;
 namespace JobPortal.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    // [Route("api/[controller]")]
     public class JobAppController : ControllerBase
     {
         private readonly ApplicationDbContext _context; // Replace 'ApplicationDbContext' with your DbContext class
@@ -50,12 +50,12 @@ namespace JobPortal.Controllers
 
         //GET: api/Job
         [HttpGet]
-        [Route("GetJobPositions")]
-        public async Task<IActionResult> GetJobPositions()
+        [Route("api/Job")]
+        public async Task<IActionResult> GetJobs()
         {
             try
             {
-                var jobs = await _context.Jobs.ToListAsync();
+                var jobs = _context.Jobs;
                 return Ok(jobs);
             }
             catch (Exception ex)
@@ -66,12 +66,12 @@ namespace JobPortal.Controllers
 
         // GET: api/Job/JobTitle
         [HttpGet]
-        [Route("GetJobTitle")]
-        public IActionResult GetJobTitle()
+        [Route("api/Job/JobTitle")]
+        public IActionResult GetJobTitle(string title)
         {
             try
             {
-                var positionTitles = _context.Jobs.Select(j => j.Title).ToList();
+                var positionTitles = _context.Jobs.Select(j => j.title==j.JobTitle).ToList();
                 return Ok(positionTitles);
             }
             catch (Exception ex)
@@ -82,7 +82,7 @@ namespace JobPortal.Controllers
 
         //POST: api/Job
         [HttpPost]
-        [Route("AddJob")]
+        [Route("api/Job")]
         public async Task<IActionResult> AddJob([FromBody] Job j)
         {
             try
@@ -92,7 +92,7 @@ namespace JobPortal.Controllers
                     return BadRequest("Job position data is invalid.");
                 }
 
-                _context.Job.Add(j);
+                _context.Jobs.Add(j);
                 await _context.SaveChangesAsync();
 
                 return Ok(j);

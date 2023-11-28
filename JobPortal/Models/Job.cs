@@ -39,6 +39,6 @@ namespace JobPortal.Models
  
         // Reference to related job applications
         // [InverseProperty("Job")]
-        public ICollection<Application> Applications {get;set;}
+        public ICollection<Application>? Applications {get;set;}
     }
 }
