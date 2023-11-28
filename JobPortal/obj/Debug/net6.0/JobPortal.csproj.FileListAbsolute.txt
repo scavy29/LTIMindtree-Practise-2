@@ -1,0 +1,7 @@
+/home/coder/project/workspace/JobPortal/obj/Debug/net6.0/JobPortal.csproj.AssemblyReference.cache
+/home/coder/project/workspace/JobPortal/obj/Debug/net6.0/JobPortal.GeneratedMSBuildEditorConfig.editorconfig
+/home/coder/project/workspace/JobPortal/obj/Debug/net6.0/JobPortal.AssemblyInfoInputs.cache
+/home/coder/project/workspace/JobPortal/obj/Debug/net6.0/JobPortal.AssemblyInfo.cs
+/home/coder/project/workspace/JobPortal/obj/Debug/net6.0/JobPortal.csproj.CoreCompileInputs.cache
+/home/coder/project/workspace/JobPortal/obj/Debug/net6.0/JobPortal.MvcApplicationPartsAssemblyInfo.cs
+/home/coder/project/workspace/JobPortal/obj/Debug/net6.0/JobPortal.MvcApplicationPartsAssemblyInfo.cache

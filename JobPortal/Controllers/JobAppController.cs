@@ -107,8 +107,7 @@ namespace JobPortal.Controllers
             }
         }
 
-        
-
+    
         [HttpDelete("positions/delete")]
         public async Task<IActionResult> DeleteJobPositions()
         {
