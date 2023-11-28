@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using JobPortal.Models;
 
 namespace JobPortal.Controllers
 {
@@ -26,6 +27,29 @@ namespace JobPortal.Controllers
         GET: api/Job/JobTitle
         */
 
+        // PUT: api/Job/{Id}
+        [HttpPut("api/Job/{Id}")]
+        public async Task<IActionResult> UpdateJob(int id, [FromBody] Jobs j)
+        {
+            try
+            {
+                var j = await _context.Jobs.FindAsync(id);
+
+                if (j == null)
+                {
+                    return NotFound($"Job with {id} not found.");
+                }
+
+                j.IsClosed = isClosed;
+                await _context.SaveChangesAsync();
+
+                return Ok(j);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
 
         //GET: api/Job
         [HttpGet]
@@ -62,7 +86,7 @@ namespace JobPortal.Controllers
         //POST: api/Job
         [HttpPost]
         [Route("AddJob")]
-        public async Task<IActionResult> AddJob([FromBody] Job j)
+        public async Task<IActionResult> AddJob([FromBody] Jobs j)
         {
             try
             {
@@ -83,7 +107,24 @@ namespace JobPortal.Controllers
             }
         }
 
-        // PUT: api/Job/{Id}
         
+
+        [HttpDelete("positions/delete")]
+        public async Task<IActionResult> DeleteJobPositions()
+        {
+            try
+            {
+                var jobPositions = await _context.JobPositions.ToListAsync();
+                _context.JobPositions.RemoveRange(jobPositions);
+                await _context.SaveChangesAsync();
+                return Ok(jobPositions);
+
+                //return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
     }
 }
