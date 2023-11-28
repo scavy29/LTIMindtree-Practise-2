@@ -29,40 +29,40 @@ namespace JobPortal.Controllers
 
         // PUT: api/Job/{Id}
         [HttpPut("api/Job/{Id}")]
-        public IActionResult UpdateJob(int id,Job j)
+public IActionResult UpdateJob(int Id, Job updatedJob)
+{
+    try
+    {
+        // Check if the model state is valid
+        if (!ModelState.IsValid)
         {
-            try
-            {
-                var updjob = _context.Jobs.Find(id);
-
-                if (updjob == null)
-                {
-                    return NotFound($"Job with {id} not found.");
-                }
-
-
-//                 {
-//   "jobID": 0,
-//   "jobTitle": "Resource manager",
-//   "department": "HR",
-//   "location": "Gurgaon",
-//   "responsibility": "Manage Activities ",
-//   "qualification": "MCA,Btech,BE",
-//   "deadLine": "2023-11-28",
-//   "category": "Non-Technical",
-//   "applications": null
-// }
-                updjob.jobTitle=j.jobTitle;
-                updjob/
-
-                _context.SaveChanges();
-                return Ok(updjob);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
-            }
+            return BadRequest(ModelState);
         }
+
+        var existingJob = _context.Jobs.FirstOrDefault(j => j.JobID == Id);
+
+        if (existingJob != null)
+        {
+            existingJob.JobTitle = updatedJob.JobTitle;
+            existingJob.Department = updatedJob.Department;
+            existingJob.Location = updatedJob.Location;
+            existingJob.Responsibility = updatedJob.Responsibility;
+            existingJob.Qualification = updatedJob.Qualification;
+            existingJob.DeadLine = updatedJob.DeadLine;
+            existingJob.Category = updatedJob.Category;
+
+            _context.SaveChanges();
+            return Ok(existingJob);
+        }
+
+        return NotFound($"Job with ID {Id} not found.");
+    }
+    catch (Exception ex)
+    {
+        return StatusCode(500, $"Internal server error: {ex.Message}");
+    }
+}
+
 
         //GET: api/Job
         [HttpGet]
