@@ -29,8 +29,8 @@ namespace JobPortal.Controllers
         */
 
         // PUT: api/Job/{Id}
-    [HttpPut("api/Job/{Id}")]
-public async Task<IActionResult> UpdateJob(int Id, Job updatedJob)
+    [HttpPut("api/Job/{id}")]
+public async Task<IActionResult> UpdateJob(int id, Job updatedJob)
 {
     try
     {
@@ -40,7 +40,7 @@ public async Task<IActionResult> UpdateJob(int Id, Job updatedJob)
             return BadRequest(ModelState);
         }
 
-        var existingJob = await _context.Jobs.FirstOrDefaultAsync(j => j.JobID == Id);
+        var existingJob = await _context.Jobs.FirstOrDefaultAsync(j => j.JobID == id);
 
         if (existingJob != null)
         {
@@ -56,7 +56,7 @@ public async Task<IActionResult> UpdateJob(int Id, Job updatedJob)
             return Ok(existingJob);
         }
 
-        return NotFound($"Job with ID {Id} not found.");
+        return NotFound($"Job with ID {id} not found.");
     }
     catch (Exception ex)
     {
@@ -85,12 +85,12 @@ public async Task<IActionResult> GetJobs()
 
 
         // DELETE: api/Job/{Id}
-        [HttpDelete("api/Job/{Id}")]
-        public IActionResult DeleteJob(int Id)
+        [HttpDelete("api/Job/{id}")]
+        public IActionResult DeleteJob(int id)
         {
             try
             {
-                var jid=_context.Jobs.Find(Id);
+                var jid=_context.Jobs.Find(id);
                 if(jid!=null)
                 {
                     _context.Remove(jid);
@@ -151,25 +151,5 @@ public async Task<IActionResult> AddJob([FromBody] Job j)
         return StatusCode(500, $"Internal server error: {ex.Message}");
     }
 }
-
-
-        // DELETE: api/Job/{Id}
-        [HttpDelete("positions/delete")]
-        public async Task<IActionResult> DeleteJobPositions()
-        {
-            try
-            {
-                var jobPositions = await _context.Jobs.ToListAsync();
-                _context.Jobs.RemoveRange(jobPositions);
-                await _context.SaveChangesAsync();
-                return Ok(jobPositions);
-
-                //return NoContent();
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
-            }
-        }
     }
 }

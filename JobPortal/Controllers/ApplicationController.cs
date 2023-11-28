@@ -18,84 +18,21 @@ namespace JobPortal.Controllers
             _context = context;
         }
 
-        //GET
-        // [HttpGet]
-        // [Route("/api/Application")]
-        // public async Task<IActionResult> GetApplication()
-        // {
-        //     try
-        //     {
-        //         var jobApplications = await _context.Applications
-        //             .Include(ja => ja.Job) // Include related Jobs
-        //             .ToListAsync();
+        //GET: api/Application
+        [HttpGet]
+        [Route("api/Application")]
+        public async Task<IActionResult> GetApplications()
+        {
+        try
+        {
+            var jobs = await _context.Jobs.ToListAsync(); // Assuming you are using Entity Framework Core
 
-        //         // Create a list of ApplicationDTO objects
-        //         var ApplicationDTOs = jobApplications.Select(ja => new Application
-        //         {
-        //             Id = ja.ApplicationID,
-        //             ApplicantName = ja.ApplicationName,
-        //             ContactNumber = ja.ContactNumber,
-        //             MailID = ja.MailID,
-        //             JobTitle = ja.JobTitle,
-        //             Status = ja.Status,
-                    
-        //             Job = new Job
-        //             {
-        //                 Id = ja.Job.JobID,
-        //                 Title = ja.Job.JobTitle,
-        //                 Department = ja.Job.Department,
-        //                 Location = ja.Job.Location,
-        //                 Responsibilities = ja.Job.Responsibility,
-        //                 Qualifications = ja.Job.Qualification,
-        //                 ApplicationDeadline = ja.Job.DeadLine,
-        //                 Category = ja.Job.Category,
-        //             },
-                    
-                    
-        //         }).ToList();
-
-        //         return Ok(ApplicationDTOs);
-        //     }
-        //     catch (Exception ex)
-        //     {
-        //         return StatusCode(500, $"Internal server error: {ex.Message}");
-        //     }
-        // }
-
-        //POST: /api/Application
-        // [HttpPost]
-        // [Route("/api/Application")]
-        // public IActionResult AddApplication(Application app)
-        // {
-        //     try
-        //     {
-        //         if(app!=null)
-        //         {
-        //             _context.Application.Add(app);
-        //         _context.SaveChanges();
-        //         return Ok(app); 
-        //         }
-        //             return BadRequest("Application is invalid");
-                  
-        //     }
-        //     catch(Exception ex)
-        //     {
-        //         return StatusCode(500, $"Internal server error: {ex.Message}");
-        //     }
-        // }
-
-        //GET: /api/Application/GetJobApplicatiopnsByUserId
-        // [HttpGet]
-        // [Route("/api/Application/GetJobApplicatiopnsByUserId")]
-        // public IActionResult GetJobApplicatiopnsByUserId(int id)
-        // {
-        //     var app=_context.Jobs.Find(id);
-        //     if(app==null)
-        //     {
-        //         return NotFound($"Job Application with ID:{id} not found");
-        //     }
-        //     return Ok(app);
-        // }
-
+            return Ok(jobs);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, $"Internal server error: {ex.Message}");
+        }
+    }
     }
 }
