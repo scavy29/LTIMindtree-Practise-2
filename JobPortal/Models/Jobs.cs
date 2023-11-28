@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace JobPortal.Models
 {
-    public class Job
+    public class Jobs
     {
         [Key]
         public int JobID {get;set;}
