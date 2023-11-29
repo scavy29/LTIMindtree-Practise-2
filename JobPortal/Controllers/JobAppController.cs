@@ -66,6 +66,11 @@ namespace JobPortal.Controllers
             {
                 var jobs = await _context.Jobs.ToListAsync(); // Assuming you are using Entity Framework Core
 
+                if (jobs == null)
+                {
+                    return NotFound($"Jobs not found.");//changed by harshal 
+                }
+
                 return Ok(jobs);
             }
             catch (Exception ex)
@@ -81,8 +86,8 @@ namespace JobPortal.Controllers
         {
             try
             {
-                var jid=_context.Jobs.Find(id);
-                if(jid!=null)
+                var jid = _context.Jobs.Find(id);
+                if (jid != null)
                 {
                     _context.Remove(jid);
                     _context.SaveChanges();
@@ -90,57 +95,57 @@ namespace JobPortal.Controllers
                 }
                 return BadRequest();
             }
-                catch(Exception ex)
-                {
-                    return StatusCode(500, $"Internal server error: {ex.Message}");
-                }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
         }
-        
+
 
         // GET: api/Job/JobTitle
         [HttpGet]
-[Route("api/Job/JobTitle")]
-public async Task<IActionResult> GetJobTitle(string title)
-{
-    try
-    {
-        var positionTitles = await _context.Jobs.FirstOrDefaultAsync(j => j.JobTitle == title);
-
-        if (positionTitles != null)
+        [Route("api/Job/JobTitle")]
+        public async Task<IActionResult> GetJobTitle(string title)
         {
-            return Ok(positionTitles);
-        }
+            try
+            {
+                var positionTitles = await _context.Jobs.FirstOrDefaultAsync(j => j.JobTitle == title);
 
-        return NotFound($"No job found with the title '{title}'.");
-    }
-    catch (Exception ex)
-    {
-        return StatusCode(500, $"Internal server error: {ex.Message}");
-    }
-}
+                if (positionTitles != null)
+                {
+                    return Ok(positionTitles);
+                }
+
+                return NotFound($"No job found with the title '{title}'.");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
 
         //POST: api/Job
-[HttpPost]
-[Route("api/Job")]
-public async Task<IActionResult> AddJob([FromBody] Job j)
-{
-    try
-    {
-        if (j == null)
+        [HttpPost]
+        [Route("api/Job")]
+        public async Task<IActionResult> AddJob([FromBody] Job j)
         {
-            return BadRequest("Job position data is invalid.");
+            try
+            {
+                if (j == null)
+                {
+                    return BadRequest("Job position data is invalid.");
+                }
+
+                _context.Jobs.Add(j);
+                await _context.SaveChangesAsync();
+
+                return Ok(j);
+                //return CreatedAtAction("GetJobPosition", new { id = jobPosition.Id }, jobPosition);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
         }
-
-        _context.Jobs.Add(j);
-        await _context.SaveChangesAsync();
-
-        return Ok(j);
-        //return CreatedAtAction("GetJobPosition", new { id = jobPosition.Id }, jobPosition);
-    }
-    catch (Exception ex)
-    {
-        return StatusCode(500, $"Internal server error: {ex.Message}");
-    }
-}
     }
 }
