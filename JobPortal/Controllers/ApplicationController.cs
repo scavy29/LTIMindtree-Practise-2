@@ -26,8 +26,11 @@ namespace JobPortal.Controllers
             try
             {
                 var apps = await _context.Applications.ToListAsync(); // Assuming you are using Entity Framework Core
-
-                return Ok(apps);
+                
+                if(apps !=null)
+                    return Ok(apps);
+                else
+                    return NotFound("Job Applications not found.");
             }
             catch (Exception ex)
             {
