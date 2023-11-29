@@ -19,69 +19,60 @@ namespace JobPortal.Controllers
             _context = context;
         }
 
-        /*
-        Required:
-        PUT: api/Job/{Id}
-        DELETE: api/Job/{Id}
-        GET: api/Job
-        POST: api/Job
-        GET: api/Job/JobTitle
-        */
-
         // PUT: api/Job/{Id}
-    [HttpPut("api/Job/{id}")]
-public async Task<IActionResult> UpdateJob(int id, Job updatedJob)
-{
-    try
-    {
-        // Check if the model state is valid
-        if (!ModelState.IsValid)
+        [HttpPut("api/Job/{id}")]
+        public async Task<IActionResult> UpdateJob(int id, Job updatedJob)
         {
-            return BadRequest(ModelState);
+            try
+            {
+                // Check if the model state is valid
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+
+                var existingJob = await _context.Jobs.FirstOrDefaultAsync(j => j.JobID == id);
+
+                if (existingJob != null)
+                {
+                    existingJob.JobTitle = updatedJob.JobTitle;
+                    existingJob.Department = updatedJob.Department;
+                    existingJob.Location = updatedJob.Location;
+                    existingJob.Responsibility = updatedJob.Responsibility;
+                    existingJob.Qualification = updatedJob.Qualification;
+                    existingJob.DeadLine = updatedJob.DeadLine;
+                    existingJob.Category = updatedJob.Category;
+
+                    await _context.SaveChangesAsync(); // Use asynchronous SaveChanges method
+                    return Ok(existingJob);
+                }
+
+                return NotFound($"Job with ID {id} not found.");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
         }
-
-        var existingJob = await _context.Jobs.FirstOrDefaultAsync(j => j.JobID == id);
-
-        if (existingJob != null)
-        {
-            existingJob.JobTitle = updatedJob.JobTitle;
-            existingJob.Department = updatedJob.Department;
-            existingJob.Location = updatedJob.Location;
-            existingJob.Responsibility = updatedJob.Responsibility;
-            existingJob.Qualification = updatedJob.Qualification;
-            existingJob.DeadLine = updatedJob.DeadLine;
-            existingJob.Category = updatedJob.Category;
-
-            await _context.SaveChangesAsync(); // Use asynchronous SaveChanges method
-            return Ok(existingJob);
-        }
-
-        return NotFound($"Job with ID {id} not found.");
-    }
-    catch (Exception ex)
-    {
-        return StatusCode(500, $"Internal server error: {ex.Message}");
-    }
-}
 
 
 
         //GET: api/Job
         [HttpGet]
-[Route("api/Job")]
-public async Task<IActionResult> GetJobs()
-{
-    try
-    {
-        var jobs = await _context.Jobs.ToListAsync(); // Assuming you are using Entity Framework Core
+        [Route("api/Job")]
+        public async Task<IActionResult> GetJobs()
+        {
+            try
+            {
+                var jobs = await _context.Jobs.ToListAsync(); // Assuming you are using Entity Framework Core
 
-        return Ok(jobs);
-    }
-    catch (Exception ex)
-    {
-        return StatusCode(500, $"Internal server error: {ex.Message}");
-    }
-}
+                return Ok(jobs);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
 
 
         // DELETE: api/Job/{Id}
