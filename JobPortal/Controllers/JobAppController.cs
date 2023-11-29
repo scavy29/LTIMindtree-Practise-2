@@ -120,7 +120,7 @@ public async Task<IActionResult> GetJobTitle(string title)
 }
 
         //POST: api/Job
-        [HttpPost]
+[HttpPost]
 [Route("api/Job")]
 public async Task<IActionResult> AddJob([FromBody] Job j)
 {

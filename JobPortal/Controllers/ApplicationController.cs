@@ -138,7 +138,7 @@ namespace JobPortal.Controllers
         }
 
 
-        [HttpPatch("api/Application/ChangeStatus/{id}")]
+        [HttpPut("api/Application/ChangeStatus/{id}")]
         public async Task<IActionResult> ChangeJobStatus(int id, [FromBody] string newStatus)
         {
             try
